@@ -1,9 +1,36 @@
 [gd_scene format=3 uid="uid://cdgsdpd15dja5"]
 
+[ext_resource type="Script" uid="uid://bjx0sru22ru6m" path="res://Assets/Scripts/box.gd" id="1_6u0qf"]
 [ext_resource type="Texture2D" uid="uid://cgjar0j8h5arw" path="res://Assets/Art/temp_box.png" id="1_fwgws"]
+[ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="1_wxdf5"]
+[ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="2_bp6g6"]
+[ext_resource type="Texture2D" uid="uid://duw1rmy747f1b" path="res://Assets/Art/temp_xray.png" id="4_bp6g6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bp6g6"]
+shader = ExtResource("1_wxdf5")
 
 [node name="Box" type="Node2D" unique_id=1833043415]
+script = ExtResource("1_6u0qf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1985921188]
+[node name="Xray" type="Sprite2D" parent="." unique_id=276503883]
+texture = ExtResource("4_bp6g6")
+centered = false
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1120272056]
+z_index = 2
+scale = Vector2(1.215, 0.8)
+copy_mode = 2
+
+[node name="Mask" type="Sprite2D" parent="BackBufferCopy" unique_id=843949800]
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_bp6g6")
+scale = Vector2(0.82304525, 1.25)
+texture = ExtResource("2_bp6g6")
+
+[node name="Box" type="Sprite2D" parent="BackBufferCopy" unique_id=1985921188]
+z_index = 2
+z_as_relative = false
+scale = Vector2(0.82304525, 1.25)
 texture = ExtResource("1_fwgws")
 centered = false

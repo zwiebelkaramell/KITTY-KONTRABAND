@@ -6,3 +6,4 @@ extends Node
 
 
 var Speed = 100
+var IsXray = false

@@ -41,14 +41,24 @@ centered = false
 [node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
 position = Vector2(-270, 307)
 
-[node name="X-Ray" type="TextureButton" parent="." unique_id=1942287973]
+[node name="UI" type="Control" parent="." unique_id=672588875]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="X-Ray" type="TextureButton" parent="UI" unique_id=1942287973]
+layout_mode = 0
 offset_left = 917.0
 offset_top = 486.0
 offset_right = 1151.0
 offset_bottom = 647.0
+toggle_mode = true
 texture_normal = ExtResource("6_8bicx")
-texture_hover = ExtResource("7_fxu2d")
+texture_pressed = ExtResource("7_fxu2d")
 
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
 
 [node name="BGM" type="AudioStreamPlayer" parent="Sound" unique_id=754700443]
+
+[connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]

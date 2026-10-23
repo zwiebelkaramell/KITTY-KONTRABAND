@@ -2,7 +2,6 @@ extends Node2D
 var box_scene = preload("res://Assets/Scenes/Instances/Box.tscn")
 @onready var boxes = $Boxes
 
-
 func _process(delta: float) -> void:
 	boxes.position.x += (G.Speed*delta)
 	
@@ -20,3 +19,12 @@ func do_box():
 	box.position = $Marker_Spawn.position
 	boxes.add_child(box)
 	pass
+
+
+func _on_x_ray_toggled(toggled_on: bool) -> void:
+	for x in boxes.get_child_count():
+		boxes.get_child(x).toggle_xray()
+	if toggled_on:
+		G.IsXray = true
+	else:
+		G.IsXray = false
