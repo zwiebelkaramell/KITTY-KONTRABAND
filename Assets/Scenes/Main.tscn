@@ -60,5 +60,6 @@ texture_pressed = ExtResource("7_fxu2d")
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
 
 [node name="BGM" type="AudioStreamPlayer" parent="Sound" unique_id=754700443]
+metadata/music = true
 
 [connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]

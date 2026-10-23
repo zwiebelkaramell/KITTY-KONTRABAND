@@ -28,3 +28,12 @@ func _on_x_ray_toggled(toggled_on: bool) -> void:
 		G.IsXray = true
 	else:
 		G.IsXray = false
+
+func sound_update():
+	for x in $Sound.get_child_count():
+		var sound = $Sound.get_child(x)
+		if sound.music:
+			sound.volume_linear == (G.VolMaster*G.VolMusic)
+		elif sound.sfx:
+			sound.volume_linear == (G.VolMaster*G.VolSFX)
+	pass
