@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdgsdpd15dja5"]
+
+[ext_resource type="Texture2D" uid="uid://cgjar0j8h5arw" path="res://Assets/Art/temp_box.png" id="1_fwgws"]
+
+[node name="Box" type="Node2D" unique_id=1833043415]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1985921188]
+texture = ExtResource("1_fwgws")
+centered = false

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://mbp7muhay6n"]
+
+[ext_resource type="Script" uid="uid://c8vwtcu0pnm26" path="res://Assets/Scripts/menu.gd" id="1_8t58v"]
+[ext_resource type="Texture2D" uid="uid://d2f6ajoyamc74" path="res://Assets/Art/temp_menu_bg.png" id="2_bo43k"]
+
+[node name="Menu" type="Node2D" unique_id=1209589811]
+script = ExtResource("1_8t58v")
+
+[node name="BG" type="TextureRect" parent="." unique_id=2142021771]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bo43k")
+
+[node name="STRAT" type="Button" parent="." unique_id=2061343011]
+offset_left = 394.0
+offset_top = 255.0
+offset_right = 756.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 86
+text = "STRAT"
+
+[connection signal="pressed" from="STRAT" to="." method="_on_button_pressed"]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://m8n1aoa71r21"]
+
+[ext_resource type="Texture2D" uid="uid://bl4ssqqtcl3ti" path="res://Assets/Art/temp_bg.png" id="1_2qpql"]
+[ext_resource type="Script" uid="uid://dulvb0mdu4vxy" path="res://Assets/Scripts/main.gd" id="1_gjahs"]
+[ext_resource type="Texture2D" uid="uid://cinligdlf7muv" path="res://Assets/Art/Conveyer/temp_conveyor_1.png" id="2_gjahs"]
+[ext_resource type="Texture2D" uid="uid://bmnyk8qtsoxg4" path="res://Assets/Art/Conveyer/temp_conveyor_2.png" id="3_g2icf"]
+[ext_resource type="Texture2D" uid="uid://pjxh5kuym1lq" path="res://Assets/Art/Conveyer/temp_conveyor_3.png" id="4_8bicx"]
+[ext_resource type="Texture2D" uid="uid://bhnjgjrybhiu6" path="res://Assets/Art/temp_x-ray.png" id="6_8bicx"]
+[ext_resource type="Texture2D" uid="uid://bb8q7dv5bv1rk" path="res://Assets/Art/temp_x-ray_hover.png" id="7_fxu2d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0ktc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gjahs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g2icf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8bicx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D" unique_id=2090636902]
+script = ExtResource("1_gjahs")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1306327301]
+texture = ExtResource("1_2qpql")
+centered = false
+
+[node name="Conveyor" type="AnimatedSprite2D" parent="." unique_id=214091721]
+sprite_frames = SubResource("SpriteFrames_c0ktc")
+centered = false
+
+[node name="Boxes" type="Node2D" parent="." unique_id=909054982]
+
+[node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
+position = Vector2(-270, 307)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1942287973]
+offset_left = 917.0
+offset_top = 486.0
+offset_right = 1151.0
+offset_bottom = 647.0
+texture_normal = ExtResource("6_8bicx")
+texture_hover = ExtResource("7_fxu2d")
