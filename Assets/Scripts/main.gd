@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	$Conveyor.play()
 	do_box()
+	$Sound/BGM.play()
 	
 	pass
 
