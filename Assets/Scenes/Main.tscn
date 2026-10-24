@@ -2,26 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://bl4ssqqtcl3ti" path="res://Assets/Art/temp_bg.png" id="1_2qpql"]
 [ext_resource type="Script" uid="uid://dulvb0mdu4vxy" path="res://Assets/Scripts/main.gd" id="1_gjahs"]
-[ext_resource type="Texture2D" uid="uid://cinligdlf7muv" path="res://Assets/Art/Conveyer/temp_conveyor_1.png" id="2_gjahs"]
-[ext_resource type="Texture2D" uid="uid://bmnyk8qtsoxg4" path="res://Assets/Art/Conveyer/temp_conveyor_2.png" id="3_g2icf"]
-[ext_resource type="Texture2D" uid="uid://pjxh5kuym1lq" path="res://Assets/Art/Conveyer/temp_conveyor_3.png" id="4_8bicx"]
+[ext_resource type="Texture2D" uid="uid://btgxhjjrfdpek" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines1.png" id="3_6pypa"]
+[ext_resource type="Texture2D" uid="uid://cge5ojoltukno" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines2.png" id="4_s4ycj"]
+[ext_resource type="Texture2D" uid="uid://bs6d4aspypydi" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines3.png" id="5_7n1ip"]
+[ext_resource type="Texture2D" uid="uid://gu4bqq465luy" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball1conveyor.png" id="6_0i17j"]
 [ext_resource type="Texture2D" uid="uid://bhnjgjrybhiu6" path="res://Assets/Art/temp_x-ray.png" id="6_8bicx"]
 [ext_resource type="Script" uid="uid://bjx0sru22ru6m" path="res://Assets/Scripts/boxes.gd" id="6_xycqk"]
 [ext_resource type="Texture2D" uid="uid://bb8q7dv5bv1rk" path="res://Assets/Art/temp_x-ray_hover.png" id="7_fxu2d"]
+[ext_resource type="Texture2D" uid="uid://cqfo3h57ir44y" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball2conveyor.png" id="7_muljk"]
+[ext_resource type="Texture2D" uid="uid://bx47rekltlkg6" path="res://Assets/Art/Conveyer/the fancier conveyer belt/outline.png" id="8_22soc"]
 [ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="8_obb38"]
 [ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="9_6pypa"]
+[ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0ktc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gjahs")
+"texture": ExtResource("3_6pypa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_g2icf")
+"texture": ExtResource("4_s4ycj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_8bicx")
+"texture": ExtResource("5_7n1ip")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbps7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0i17j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_muljk")
 }],
 "loop": 1,
 "name": &"default",
@@ -40,6 +58,20 @@ centered = false
 
 [node name="Conveyor" type="AnimatedSprite2D" parent="." unique_id=214091721]
 sprite_frames = SubResource("SpriteFrames_c0ktc")
+autoplay = "default"
+centered = false
+
+[node name="rollers" type="AnimatedSprite2D" parent="Conveyor" unique_id=1376392100]
+sprite_frames = SubResource("SpriteFrames_dbps7")
+autoplay = "default"
+centered = false
+
+[node name="linework" type="Sprite2D" parent="Conveyor/rollers" unique_id=1263470093]
+texture = ExtResource("8_22soc")
+centered = false
+
+[node name="bolts" type="Sprite2D" parent="Conveyor/rollers/linework" unique_id=1726638943]
+texture = ExtResource("9_xxxt7")
 centered = false
 
 [node name="Boxes" type="Node2D" parent="." unique_id=909054982]
@@ -56,7 +88,7 @@ material = SubResource("ShaderMaterial_6u0qf")
 texture = ExtResource("9_6pypa")
 
 [node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
-position = Vector2(-270, 307)
+position = Vector2(-268, 198)
 
 [node name="UI" type="Control" parent="." unique_id=672588875]
 layout_mode = 3

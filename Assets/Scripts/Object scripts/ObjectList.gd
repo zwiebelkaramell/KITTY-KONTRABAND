@@ -10,7 +10,7 @@ func add_data(is_cat: bool, difficulty: int, path: String):
 	return c
 
 @export var non_cat = [
-	add_data(false, 0, "res://Assets/Art/temp_xray.png")
+	add_data(false, 0, "res://Assets/Art/temp_empty.png")
 ]
 
 @export var cat = [

@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _ready() -> void:
-	$Conveyor.play()
 	day_start()
 	do_box()
 	$Sound/BGM.play()
@@ -43,7 +42,11 @@ func day_start(): #pull data on magic objects, replace some with cats
 	for n in range(0, package_num):
 		var x = randi_range(0, (len(obj_list.non_cat)-1)) #randi_range is inclusive for some reason
 		G.PKGList.append(obj_list.non_cat[x])
-		pass
+	for n in range(0, G.CatNum):
+		var x = randi_range(0, len(G.PKGList)-1)
+		var y = randi_range(0, (len(obj_list.cat)-1))
+		G.PKGList[x] = obj_list.cat[y]
+		print("CAT ACTIVATED")
 	pass
 	
 func sound_update():
