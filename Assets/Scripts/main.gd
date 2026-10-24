@@ -21,7 +21,7 @@ func _ready() -> void:
 	day_start()
 	do_box()
 	$Sound/BGS_60hzHumLoop.play()
-	$Sound/BGS_ConveyorPlaylist.play()
+	$Sound/SFX_ConveyorStart.play()
 	
 	pass
 

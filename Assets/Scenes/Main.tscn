@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
 [ext_resource type="Texture2D" uid="uid://do2f01s2xblgo" path="res://Assets/Art/temp_stetho.png" id="16_0i17j"]
 [ext_resource type="Texture2D" uid="uid://cf7raxrhw43qk" path="res://Assets/Art/temp_stetho_hover.png" id="17_muljk"]
+[ext_resource type="Script" uid="uid://bejkjenm5m2f3" path="res://Assets/Scripts/sound.gd" id="18_4kbup"]
 [ext_resource type="AudioStream" uid="uid://u1nf00r0kpv0" path="res://Assets/Audio/cat_deposit_1.ogg" id="18_fq3cg"]
 [ext_resource type="AudioStream" uid="uid://rfk57enjocmu" path="res://Assets/Audio/conveyor_loop.ogg" id="19_mhdow"]
 [ext_resource type="AudioStream" uid="uid://77asqfpd3ibd" path="res://Assets/Audio/cat_deposit_2.ogg" id="19_qxp8c"]
@@ -73,13 +74,6 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6u0qf"]
 shader = ExtResource("8_obb38")
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_yxtrc"]
-loop = false
-fade_time = 0.0
-stream_count = 2
-stream_0 = ExtResource("35_pt21i")
-stream_1 = ExtResource("19_mhdow")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_muljk"]
 streams_count = 4
@@ -168,6 +162,7 @@ texture_normal = ExtResource("16_0i17j")
 texture_pressed = ExtResource("17_muljk")
 
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
+script = ExtResource("18_4kbup")
 
 [node name="BGS_60hzHumLoop" type="AudioStreamPlayer" parent="Sound" unique_id=219500075]
 stream = ExtResource("23_ddmr4")
@@ -178,11 +173,6 @@ parameters/looping = true
 stream = ExtResource("19_mhdow")
 bus = &"BGS"
 parameters/looping = true
-
-[node name="BGS_ConveyorPlaylist" type="AudioStreamPlayer" parent="Sound" unique_id=1249753453]
-stream = SubResource("AudioStreamPlaylist_yxtrc")
-volume_db = -4.0
-bus = &"BGS"
 
 [node name="SFX_CatDepositRandom" type="AudioStreamPlayer" parent="Sound" unique_id=1802270947]
 stream = SubResource("AudioStreamRandomizer_muljk")
@@ -242,4 +232,5 @@ bus = &"SFX"
 wait_time = 3.946
 
 [connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]
+[connection signal="finished" from="Sound/SFX_ConveyorStart" to="Sound" method="_on_sfx_conveyor_start_finished"]
 [connection signal="timeout" from="Timers/BoxSpawn" to="." method="_on_box_spawn_timeout"]
