@@ -4,6 +4,15 @@ var xray_scene = preload("res://Assets/Scenes/Instances/xray.tscn")
 
 func _process(delta: float) -> void:
 	$Boxes.position.x += (G.Speed*delta)
+	for n in $Boxes.get_child_count(): #sigh
+		if $Boxes.get_child(n).global_position.x > 1500 && $Boxes.get_child(n).name != "BackBufferCopy": #sigh
+			$Boxes.get_child(n).queue_free()
+			print("See ya, clowno!")
+	for n in $Boxes/BackBufferCopy.get_child_count():
+		if $Boxes/BackBufferCopy.get_child(n).global_position.x > 1500:
+			$Boxes/BackBufferCopy.get_child(n).queue_free()
+			print("See ya, bozo!")
+	
 	pass
 
 func _ready() -> void:
