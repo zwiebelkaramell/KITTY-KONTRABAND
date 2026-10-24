@@ -1,6 +1,8 @@
 extends Node2D
 var box_scene = preload("res://Assets/Scenes/Instances/Box.tscn")
-var xray_scene = preload("res://Assets/Scenes/Instances/xray.tscn")
+var xray_scene = preload("res://Assets/Scenes/Instances/Xray.tscn")
+
+var obj_list = load("res://Assets/Scripts/Object scripts/ObjectList.gd").new()
 
 func _process(delta: float) -> void:
 	$Boxes.position.x += (G.Speed*delta)
@@ -28,12 +30,20 @@ func do_box():
 	var xray = xray_scene.instantiate()
 	box.position = $Marker_Spawn.position - $Boxes.position
 	xray.position = $Marker_Spawn.position - $Boxes.position
+	xray.pass_obj(G.PKGList[0])
+	xray.get_child(0).set_texture(load(xray.cont_obj.path))
+	G.PKGList.pop_at(0)
 	$Boxes/BackBufferCopy.add_child(box)
 	$Boxes.add_child(xray)
 	$Timers/BoxSpawn.start()
 	pass
-	
+
 func day_start(): #pull data on magic objects, replace some with cats
+	var package_num = G.Quota + G.CatNum + G.fail_num + 6 #how many packages to distribute
+	for n in range(0, package_num):
+		var x = randi_range(0, (len(obj_list.non_cat)-1)) #randi_range is inclusive for some reason
+		G.PKGList.append(obj_list.non_cat[x])
+		pass
 	pass
 	
 func sound_update():
