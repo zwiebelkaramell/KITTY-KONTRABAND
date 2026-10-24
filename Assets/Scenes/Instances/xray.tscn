@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bkh2odfmymt2r"]
+
+[ext_resource type="Texture2D" uid="uid://duw1rmy747f1b" path="res://Assets/Art/temp_xray.png" id="1_qfxcs"]
+[ext_resource type="Script" uid="uid://bjctwub7km45v" path="res://Assets/Scripts/xray.gd" id="2_dvl6v"]
+
+[node name="Xray" type="Sprite2D" unique_id=955979165]
+texture = ExtResource("1_qfxcs")
+centered = false
+script = ExtResource("2_dvl6v")
+
+[node name="Contents" type="Sprite2D" parent="." unique_id=69195861]
+centered = false

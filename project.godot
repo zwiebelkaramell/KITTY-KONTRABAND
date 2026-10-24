@@ -23,6 +23,7 @@ G="*uid://cd26aaughqdq1"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [physics]
 
