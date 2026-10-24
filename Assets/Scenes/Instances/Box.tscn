@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdgsdpd15dja5"]
 
-[ext_resource type="Texture2D" uid="uid://cgjar0j8h5arw" path="res://Assets/Art/temp_box.png" id="1_342pa"]
+[ext_resource type="Texture2D" uid="uid://bvjrvwig37xhr" path="res://Assets/Art/boxes/disgustung box outside.png" id="1_fwgws"]
 
 [node name="Box" type="Sprite2D" unique_id=2052325527]
-texture = ExtResource("1_342pa")
+texture = ExtResource("1_fwgws")
 centered = false

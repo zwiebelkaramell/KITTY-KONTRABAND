@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bl4ssqqtcl3ti" path="res://Assets/Art/temp_bg.png" id="1_2qpql"]
 [ext_resource type="Script" uid="uid://dulvb0mdu4vxy" path="res://Assets/Scripts/main.gd" id="1_gjahs"]
 [ext_resource type="Texture2D" uid="uid://btgxhjjrfdpek" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines1.png" id="3_6pypa"]
+[ext_resource type="Texture2D" uid="uid://b730qn1ex8dkt" path="res://Assets/Art/tables/dirty ass item table.png" id="3_s4ycj"]
 [ext_resource type="Texture2D" uid="uid://cge5ojoltukno" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines2.png" id="4_s4ycj"]
 [ext_resource type="Texture2D" uid="uid://bs6d4aspypydi" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines3.png" id="5_7n1ip"]
 [ext_resource type="Texture2D" uid="uid://gu4bqq465luy" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball1conveyor.png" id="6_0i17j"]
@@ -56,6 +57,11 @@ script = ExtResource("1_gjahs")
 texture = ExtResource("1_2qpql")
 centered = false
 
+[node name="Table" type="Sprite2D" parent="BG" unique_id=636654093]
+z_index = 1
+texture = ExtResource("3_s4ycj")
+centered = false
+
 [node name="Conveyor" type="AnimatedSprite2D" parent="." unique_id=214091721]
 sprite_frames = SubResource("SpriteFrames_c0ktc")
 autoplay = "default"
@@ -88,7 +94,7 @@ material = SubResource("ShaderMaterial_6u0qf")
 texture = ExtResource("9_6pypa")
 
 [node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
-position = Vector2(-268, 198)
+position = Vector2(-268, 156)
 
 [node name="UI" type="Control" parent="." unique_id=672588875]
 layout_mode = 3
