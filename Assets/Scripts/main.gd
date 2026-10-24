@@ -20,7 +20,8 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	day_start()
 	do_box()
-	$Sound/BGM.play()
+	$Sound/BGS_60hzHumLoop.play()
+	$Sound/BGS_ConveyorPlaylist.play()
 	
 	pass
 

@@ -17,6 +17,28 @@
 [ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
 [ext_resource type="Texture2D" uid="uid://do2f01s2xblgo" path="res://Assets/Art/temp_stetho.png" id="16_0i17j"]
 [ext_resource type="Texture2D" uid="uid://cf7raxrhw43qk" path="res://Assets/Art/temp_stetho_hover.png" id="17_muljk"]
+[ext_resource type="AudioStream" uid="uid://u1nf00r0kpv0" path="res://Assets/Audio/cat_deposit_1.ogg" id="18_fq3cg"]
+[ext_resource type="AudioStream" uid="uid://rfk57enjocmu" path="res://Assets/Audio/conveyor_loop.ogg" id="19_mhdow"]
+[ext_resource type="AudioStream" uid="uid://77asqfpd3ibd" path="res://Assets/Audio/cat_deposit_2.ogg" id="19_qxp8c"]
+[ext_resource type="AudioStream" uid="uid://jfqqyf12mohp" path="res://Assets/Audio/cat_deposit_3.ogg" id="20_h5qsp"]
+[ext_resource type="AudioStream" uid="uid://bocqhc1kp2xhy" path="res://Assets/Audio/cat_deposit_4.ogg" id="21_1njbh"]
+[ext_resource type="AudioStream" uid="uid://b1nio6fjw26x6" path="res://Assets/Audio/cat_deposit_tube_suction.ogg" id="22_iaf12"]
+[ext_resource type="AudioStream" uid="uid://dshblnpv853ay" path="res://Assets/Audio/bg_60hz_hum_loop.ogg" id="23_ddmr4"]
+[ext_resource type="AudioStream" uid="uid://o1wcwdpedc2h" path="res://Assets/Audio/cat_meow_1.ogg" id="25_4kbup"]
+[ext_resource type="AudioStream" uid="uid://bo1s1ml1lhr5" path="res://Assets/Audio/cat_meow_2.ogg" id="26_721gu"]
+[ext_resource type="AudioStream" uid="uid://ltyt6chmncos" path="res://Assets/Audio/cat_meow_3.ogg" id="27_fqjcf"]
+[ext_resource type="AudioStream" uid="uid://dxsb4nml2epio" path="res://Assets/Audio/cat_meow_4.ogg" id="28_3pnir"]
+[ext_resource type="AudioStream" uid="uid://ctgfxdd5jlcv7" path="res://Assets/Audio/cat_meow_5.ogg" id="29_80ed3"]
+[ext_resource type="AudioStream" uid="uid://dfwlitvimlhhu" path="res://Assets/Audio/cat_meow_6.ogg" id="30_iimxx"]
+[ext_resource type="AudioStream" uid="uid://cjhcpd0dhwuw2" path="res://Assets/Audio/cat_purr_1_loop.ogg" id="31_kwusr"]
+[ext_resource type="AudioStream" uid="uid://bipltgkx70j64" path="res://Assets/Audio/cat_purr_1_loop_muffled.ogg" id="32_dsner"]
+[ext_resource type="AudioStream" uid="uid://c0f7j1wglm4i" path="res://Assets/Audio/cat_purr_2_loop.ogg" id="33_kupbj"]
+[ext_resource type="AudioStream" uid="uid://b1tqj1w3phcv2" path="res://Assets/Audio/cat_purr_2_loop_muffled.ogg" id="34_1hk8p"]
+[ext_resource type="AudioStream" uid="uid://cxip6da8y5tvc" path="res://Assets/Audio/conveyor_start.ogg" id="35_pt21i"]
+[ext_resource type="AudioStream" uid="uid://cwpvsxy1sr03" path="res://Assets/Audio/shift_start_whistle.ogg" id="36_05dm0"]
+[ext_resource type="AudioStream" uid="uid://bkvg8uqaf60ab" path="res://Assets/Audio/Stethoscope_Select.ogg" id="37_2v6g5"]
+[ext_resource type="AudioStream" uid="uid://duwvge4hpmjw0" path="res://Assets/Audio/Tuna_Select.ogg" id="38_cnwco"]
+[ext_resource type="AudioStream" uid="uid://bei1bp2j45qrk" path="res://Assets/Audio/X-Ray_Select.ogg" id="39_fkcst"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0ktc"]
 animations = [{
@@ -51,6 +73,29 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6u0qf"]
 shader = ExtResource("8_obb38")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_yxtrc"]
+loop = false
+fade_time = 0.0
+stream_count = 2
+stream_0 = ExtResource("35_pt21i")
+stream_1 = ExtResource("19_mhdow")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_muljk"]
+streams_count = 4
+stream_0/stream = ExtResource("18_fq3cg")
+stream_1/stream = ExtResource("19_qxp8c")
+stream_2/stream = ExtResource("20_h5qsp")
+stream_3/stream = ExtResource("21_1njbh")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yxtrc"]
+streams_count = 6
+stream_0/stream = ExtResource("25_4kbup")
+stream_1/stream = ExtResource("26_721gu")
+stream_2/stream = ExtResource("27_fqjcf")
+stream_3/stream = ExtResource("28_3pnir")
+stream_4/stream = ExtResource("29_80ed3")
+stream_5/stream = ExtResource("30_iimxx")
 
 [node name="Main" type="Node2D" unique_id=2090636902]
 script = ExtResource("1_gjahs")
@@ -124,10 +169,72 @@ texture_pressed = ExtResource("17_muljk")
 
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
 
-[node name="BGM" type="AudioStreamPlayer" parent="Sound" unique_id=754700443]
-metadata/music = true
+[node name="BGS_60hzHumLoop" type="AudioStreamPlayer" parent="Sound" unique_id=219500075]
+stream = ExtResource("23_ddmr4")
+bus = &"BGS"
+parameters/looping = true
 
-[node name="SFX" type="AudioStreamPlayer" parent="Sound" unique_id=173984182]
+[node name="BGS_ConveyorLoop" type="AudioStreamPlayer" parent="Sound" unique_id=617418656]
+stream = ExtResource("19_mhdow")
+bus = &"BGS"
+parameters/looping = true
+
+[node name="BGS_ConveyorPlaylist" type="AudioStreamPlayer" parent="Sound" unique_id=1249753453]
+stream = SubResource("AudioStreamPlaylist_yxtrc")
+volume_db = -4.0
+bus = &"BGS"
+
+[node name="SFX_CatDepositRandom" type="AudioStreamPlayer" parent="Sound" unique_id=1802270947]
+stream = SubResource("AudioStreamRandomizer_muljk")
+bus = &"SFX"
+
+[node name="SFX_CatDepositTubeSuction" type="AudioStreamPlayer" parent="Sound" unique_id=1183986397]
+stream = ExtResource("22_iaf12")
+bus = &"SFX"
+
+[node name="SFX_CatMeowRandom" type="AudioStreamPlayer" parent="Sound" unique_id=24805908]
+stream = SubResource("AudioStreamRandomizer_yxtrc")
+bus = &"SFX"
+
+[node name="SFX_CatPurr1Loop" type="AudioStreamPlayer" parent="Sound" unique_id=1634276771]
+stream = ExtResource("31_kwusr")
+bus = &"SFX"
+parameters/looping = true
+
+[node name="SFX_CatPurr1MuffledLoop" type="AudioStreamPlayer" parent="Sound" unique_id=145349178]
+stream = ExtResource("32_dsner")
+bus = &"SFX"
+parameters/looping = true
+
+[node name="SFX_CatPurr2Loop" type="AudioStreamPlayer" parent="Sound" unique_id=1729880797]
+stream = ExtResource("33_kupbj")
+bus = &"SFX"
+parameters/looping = true
+
+[node name="SFX_CatPurr2MuffledLoop" type="AudioStreamPlayer" parent="Sound" unique_id=529678943]
+stream = ExtResource("34_1hk8p")
+bus = &"SFX"
+parameters/looping = true
+
+[node name="SFX_ConveyorStart" type="AudioStreamPlayer" parent="Sound" unique_id=269110474]
+stream = ExtResource("35_pt21i")
+bus = &"SFX"
+
+[node name="SFX_ShiftStartWhistle" type="AudioStreamPlayer" parent="Sound" unique_id=1819735620]
+stream = ExtResource("36_05dm0")
+bus = &"SFX"
+
+[node name="SFX_ItemSelectStethoscope" type="AudioStreamPlayer" parent="Sound" unique_id=998267730]
+stream = ExtResource("37_2v6g5")
+bus = &"SFX"
+
+[node name="SFX_ItemSelectTuna" type="AudioStreamPlayer" parent="Sound" unique_id=1667154024]
+stream = ExtResource("38_cnwco")
+bus = &"SFX"
+
+[node name="SFX_ItemSelectXRay" type="AudioStreamPlayer" parent="Sound" unique_id=1695173975]
+stream = ExtResource("39_fkcst")
+bus = &"SFX"
 
 [node name="Timers" type="Node" parent="." unique_id=1476119544]
 
