@@ -15,6 +15,8 @@
 [ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="8_obb38"]
 [ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="9_6pypa"]
 [ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
+[ext_resource type="Texture2D" uid="uid://do2f01s2xblgo" path="res://Assets/Art/temp_stetho.png" id="16_0i17j"]
+[ext_resource type="Texture2D" uid="uid://cf7raxrhw43qk" path="res://Assets/Art/temp_stetho_hover.png" id="17_muljk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0ktc"]
 animations = [{
@@ -112,10 +114,20 @@ toggle_mode = true
 texture_normal = ExtResource("6_8bicx")
 texture_pressed = ExtResource("7_fxu2d")
 
+[node name="TextureButton" type="TextureButton" parent="UI" unique_id=175891044]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource("16_0i17j")
+texture_pressed = ExtResource("17_muljk")
+
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
 
 [node name="BGM" type="AudioStreamPlayer" parent="Sound" unique_id=754700443]
 metadata/music = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="Sound" unique_id=173984182]
 
 [node name="Timers" type="Node" parent="." unique_id=1476119544]
 
