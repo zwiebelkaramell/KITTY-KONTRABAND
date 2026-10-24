@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bmnyk8qtsoxg4" path="res://Assets/Art/Conveyer/temp_conveyor_2.png" id="3_g2icf"]
 [ext_resource type="Texture2D" uid="uid://pjxh5kuym1lq" path="res://Assets/Art/Conveyer/temp_conveyor_3.png" id="4_8bicx"]
 [ext_resource type="Texture2D" uid="uid://bhnjgjrybhiu6" path="res://Assets/Art/temp_x-ray.png" id="6_8bicx"]
+[ext_resource type="Script" uid="uid://bjx0sru22ru6m" path="res://Assets/Scripts/boxes.gd" id="6_xycqk"]
 [ext_resource type="Texture2D" uid="uid://bb8q7dv5bv1rk" path="res://Assets/Art/temp_x-ray_hover.png" id="7_fxu2d"]
+[ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="8_obb38"]
+[ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="9_6pypa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0ktc"]
 animations = [{
@@ -25,6 +28,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u0qf"]
+shader = ExtResource("8_obb38")
+
 [node name="Main" type="Node2D" unique_id=2090636902]
 script = ExtResource("1_gjahs")
 
@@ -37,6 +43,17 @@ sprite_frames = SubResource("SpriteFrames_c0ktc")
 centered = false
 
 [node name="Boxes" type="Node2D" parent="." unique_id=909054982]
+script = ExtResource("6_xycqk")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Boxes" unique_id=1120272056]
+z_index = 2
+copy_mode = 2
+
+[node name="Mask" type="Sprite2D" parent="Boxes/BackBufferCopy" unique_id=843949800]
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_6u0qf")
+texture = ExtResource("9_6pypa")
 
 [node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
 position = Vector2(-270, 307)
@@ -62,4 +79,10 @@ texture_pressed = ExtResource("7_fxu2d")
 [node name="BGM" type="AudioStreamPlayer" parent="Sound" unique_id=754700443]
 metadata/music = true
 
+[node name="Timers" type="Node" parent="." unique_id=1476119544]
+
+[node name="BoxSpawn" type="Timer" parent="Timers" unique_id=1417916831]
+wait_time = 3.946
+
 [connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]
+[connection signal="timeout" from="Timers/BoxSpawn" to="." method="_on_box_spawn_timeout"]

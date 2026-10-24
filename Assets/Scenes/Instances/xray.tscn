@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bkh2odfmymt2r"]
+
+[ext_resource type="Texture2D" uid="uid://duw1rmy747f1b" path="res://Assets/Art/temp_xray.png" id="1_qfxcs"]
+
+[node name="Xray" type="Sprite2D" unique_id=955979165]
+texture = ExtResource("1_qfxcs")
+centered = false
