@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bd64wlgjc7klk" path="res://Assets/Art/background/bg_blink.png" id="3_sbipf"]
 [ext_resource type="Texture2D" uid="uid://cge5ojoltukno" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines2.png" id="4_s4ycj"]
 [ext_resource type="Texture2D" uid="uid://bs6d4aspypydi" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines3.png" id="5_7n1ip"]
+[ext_resource type="Texture2D" uid="uid://8w0bobfj3boa" path="res://Assets/Art/tools/behind of cat shoot.png" id="5_hshu0"]
 [ext_resource type="Texture2D" uid="uid://gu4bqq465luy" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball1conveyor.png" id="6_0i17j"]
+[ext_resource type="Texture2D" uid="uid://bivtd4g6oquxe" path="res://Assets/Art/tools/ cat shoot 1 file.png" id="6_41ttk"]
 [ext_resource type="Script" uid="uid://bjx0sru22ru6m" path="res://Assets/Scripts/boxes.gd" id="6_xycqk"]
 [ext_resource type="Texture2D" uid="uid://cqfo3h57ir44y" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball2conveyor.png" id="7_muljk"]
 [ext_resource type="Texture2D" uid="uid://bx47rekltlkg6" path="res://Assets/Art/Conveyer/the fancier conveyer belt/outline.png" id="8_22soc"]
@@ -16,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
 [ext_resource type="Texture2D" uid="uid://b2jjkjlmnfy1f" path="res://Assets/Art/tools/raygun.png" id="14_kwusr"]
 [ext_resource type="Texture2D" uid="uid://su76fg58v362" path="res://Assets/Art/tools/raygun_hover.png" id="15_dsner"]
+[ext_resource type="Texture2D" uid="uid://c1mqly03ikbog" path="res://Assets/Art/tools/1st long stethistcope throat.png" id="15_ti8a1"]
 [ext_resource type="Texture2D" uid="uid://bpf6kflroewk7" path="res://Assets/Art/tools/stethescope.png" id="16_kupbj"]
 [ext_resource type="Texture2D" uid="uid://dhbyetb8n17wm" path="res://Assets/Art/tools/stethescope_hover.png" id="17_1hk8p"]
 [ext_resource type="Script" uid="uid://bejkjenm5m2f3" path="res://Assets/Scripts/sound.gd" id="18_4kbup"]
@@ -114,6 +117,9 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6u0qf"]
 shader = ExtResource("8_obb38")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0ktc"]
+radius = 35.014282
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_c0ktc"]
 frames = 2
 frame_0/texture = ExtResource("19_iimxx")
@@ -177,6 +183,14 @@ z_index = 1
 texture = ExtResource("3_s4ycj")
 centered = false
 
+[node name="Chute" type="Sprite2D" parent="BG" unique_id=1125787542]
+texture = ExtResource("5_hshu0")
+centered = false
+
+[node name="Front" type="Sprite2D" parent="BG/Chute" unique_id=311913558]
+texture = ExtResource("6_41ttk")
+centered = false
+
 [node name="Conveyor" type="AnimatedSprite2D" parent="." unique_id=214091721]
 sprite_frames = SubResource("SpriteFrames_c0ktc")
 autoplay = "default"
@@ -202,13 +216,40 @@ script = ExtResource("6_xycqk")
 z_index = 2
 copy_mode = 2
 
-[node name="Mask" type="Sprite2D" parent="Boxes/BackBufferCopy" unique_id=843949800]
+[node name="Mouse" type="Node2D" parent="Boxes/BackBufferCopy" unique_id=833525770]
+
+[node name="Mask" type="Sprite2D" parent="Boxes/BackBufferCopy/Mouse" unique_id=843949800]
 visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_6u0qf")
 texture = ExtResource("9_6pypa")
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Boxes/BackBufferCopy/Mask" unique_id=160767025]
+[node name="AudioListener2D" type="AudioListener2D" parent="Boxes/BackBufferCopy/Mouse/Mask" unique_id=160767025]
+
+[node name="1StLongStethistcopeThroat" type="Sprite2D" parent="Boxes/BackBufferCopy/Mouse" unique_id=2010204735]
+visible = false
+z_index = 1
+position = Vector2(3, 1)
+rotation = -2.1240656
+texture = ExtResource("15_ti8a1")
+offset = Vector2(-440.53265, 44.074295)
+
+[node name="Tuna" type="Sprite2D" parent="Boxes/BackBufferCopy/Mouse" unique_id=1193051558]
+visible = false
+z_index = 1
+texture = ExtResource("18_pt21i")
+
+[node name="Area2D" type="Area2D" parent="Boxes/BackBufferCopy/Mouse/Tuna" unique_id=851258243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boxes/BackBufferCopy/Mouse/Tuna/Area2D" unique_id=1771091614]
+shape = SubResource("CircleShape2D_c0ktc")
+
+[node name="Knife" type="Sprite2D" parent="Boxes/BackBufferCopy/Mouse" unique_id=1994164663]
+visible = false
+z_index = 1
+position = Vector2(50, 80)
+rotation = 1.0471976
+texture = ExtResource("18_fqjcf")
 
 [node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
 position = Vector2(-268, 156)
@@ -404,6 +445,7 @@ one_shot = true
 [node name="BlinkTimer" type="Timer" parent="Timers" unique_id=1837363323]
 autostart = true
 
+[connection signal="area_entered" from="Boxes/BackBufferCopy/Mouse/Tuna/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]
 [connection signal="toggled" from="UI/Stethoscope" to="." method="_on_stethoscope_toggled"]
 [connection signal="toggled" from="UI/Tuna" to="." method="_on_tuna_toggled"]

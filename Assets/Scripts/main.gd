@@ -5,9 +5,13 @@ var xray_scene = preload("res://Assets/Scenes/Instances/Xray.tscn")
 var obj_list = load("res://Assets/Scripts/Object scripts/ObjectList.gd").new()
 
 var clicked_boxes = []
+var tuna_bool = false
 
 func _process(delta: float) -> void:
 	$Boxes.position.x += (G.Speed*delta)
+	
+
+	
 	for n in $Boxes.get_child_count(): #sigh
 		if $Boxes.get_child(n).global_position.x > 1500 && $Boxes.get_child(n).has_meta("Xray"): #sigh
 			if $Boxes.get_child(n).cont_obj.is_cat:
@@ -57,7 +61,9 @@ func day_start(): #pull data on magic objects, replace some with cats
 	for n in range(0, G.CatNum):
 		var x = randi_range(0, len(G.PKGList)-1)
 		var y = randi_range(0, (len(obj_list.cat)-1))
+		var tuna = randi_range(0, 1)
 		G.PKGList[x] = obj_list.cat[y]
+		G.PKGList[x].is_tuna = bool(x)
 		print("CAT ACTIVATED")
 	pass
 	
@@ -136,8 +142,11 @@ func _on_tuna_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		exclusive_toggle($UI/Tuna.name)
 		$Sound/SFX_ItemSelectTuna.play()
+		G.IsTuna = true
 	else:
+		G.IsTuna = false
 		pass
+	$Boxes.toggle_tuna()
 
 func _on_knife_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -145,7 +154,7 @@ func _on_knife_toggled(toggled_on: bool) -> void:
 		exclusive_toggle($UI/KNIFE.name)
 	else:
 		G.IsKnife = false
-
+	$Boxes.toggle_knife()
 func _on_pspsps_pressed() -> void:
 	pass # Replace with function body.
 
@@ -153,3 +162,17 @@ func _on_pspsps_pressed() -> void:
 func _on_blink_timer_timeout() -> void:
 	$BG.play()
 	$Timers/BlinkTimer.start(randf_range(5.0,10.0))
+
+
+func should_you_shake(obj: Node): # THE JANK IS REAL
+	if tuna_bool:
+		obj.shake()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if G.IsTuna:
+		if area.get_parent().get_parent().get("cont_obj"):
+			if area.get_parent().get_parent().cont_obj.is_tuna:
+				tuna_bool = true
+			else:
+				tuna_bool = false
+		call_deferred("should_you_shake", area.get_parent().get_parent())

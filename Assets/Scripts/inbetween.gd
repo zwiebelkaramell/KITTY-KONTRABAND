@@ -16,5 +16,11 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	# add logic for increasing difficulty here
+	G.Level += 1
+	G.CatNum = G.base_catnum + (G.base_catnum*G.Level)
+	G.Quota = G.base_quota + ((G.base_quota/2)*G.Level)
+	G.Speed = G.base_speed + ((G.base_speed/10)*G.Level)
+	if G.Level >= G.last_level:
+		get_tree().change_scene_to_file("res://Assets/Scenes/Win.tscn")
 	get_tree().change_scene_to_file("res://Assets/Scenes/Main.tscn")
 	pass # Replace with function body.
