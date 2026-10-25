@@ -7,10 +7,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f5dhn"]
 shader = ExtResource("3_8bpiw")
 
-[node name="Xray" type="Sprite2D" unique_id=955979165]
-texture = ExtResource("1_8bpiw")
-centered = false
+[node name="Xray" type="TextureButton" unique_id=901372612]
+texture_normal = ExtResource("1_8bpiw")
 script = ExtResource("2_dvl6v")
+metadata/Xray = true
 
 [node name="Contents" type="Sprite2D" parent="." unique_id=69195861]
 material = SubResource("ShaderMaterial_f5dhn")

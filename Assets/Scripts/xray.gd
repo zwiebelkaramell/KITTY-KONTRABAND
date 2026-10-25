@@ -1,4 +1,4 @@
-extends Sprite2D
+extends TextureButton
 
 var cont_obj: Object
 

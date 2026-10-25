@@ -22,8 +22,6 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1792430855]
 layout_mode = 2
-text = "YOU HAVE FAILED US COMRADE!
-HEXES AND SPELLS WILL RUN RAMPANT IN THE COUNTRYSIDE!"
 label_settings = SubResource("LabelSettings_c0ktc")
 horizontal_alignment = 1
 

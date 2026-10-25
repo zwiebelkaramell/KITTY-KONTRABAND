@@ -1,27 +1,29 @@
 [gd_scene format=3 uid="uid://m8n1aoa71r21"]
 
-[ext_resource type="Texture2D" uid="uid://bl4ssqqtcl3ti" path="res://Assets/Art/temp_bg.png" id="1_2qpql"]
 [ext_resource type="Script" uid="uid://dulvb0mdu4vxy" path="res://Assets/Scripts/main.gd" id="1_gjahs"]
+[ext_resource type="Texture2D" uid="uid://b3box6pmtpg5r" path="res://Assets/Art/background/bg.png" id="2_kwusr"]
 [ext_resource type="Texture2D" uid="uid://btgxhjjrfdpek" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines1.png" id="3_6pypa"]
 [ext_resource type="Texture2D" uid="uid://b730qn1ex8dkt" path="res://Assets/Art/tables/dirty ass item table.png" id="3_s4ycj"]
 [ext_resource type="Texture2D" uid="uid://cge5ojoltukno" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines2.png" id="4_s4ycj"]
 [ext_resource type="Texture2D" uid="uid://bs6d4aspypydi" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines3.png" id="5_7n1ip"]
 [ext_resource type="Texture2D" uid="uid://gu4bqq465luy" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball1conveyor.png" id="6_0i17j"]
-[ext_resource type="Texture2D" uid="uid://bhnjgjrybhiu6" path="res://Assets/Art/temp_x-ray.png" id="6_8bicx"]
 [ext_resource type="Script" uid="uid://bjx0sru22ru6m" path="res://Assets/Scripts/boxes.gd" id="6_xycqk"]
-[ext_resource type="Texture2D" uid="uid://bb8q7dv5bv1rk" path="res://Assets/Art/temp_x-ray_hover.png" id="7_fxu2d"]
 [ext_resource type="Texture2D" uid="uid://cqfo3h57ir44y" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball2conveyor.png" id="7_muljk"]
 [ext_resource type="Texture2D" uid="uid://bx47rekltlkg6" path="res://Assets/Art/Conveyer/the fancier conveyer belt/outline.png" id="8_22soc"]
 [ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="8_obb38"]
 [ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="9_6pypa"]
 [ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
-[ext_resource type="Texture2D" uid="uid://do2f01s2xblgo" path="res://Assets/Art/temp_stetho.png" id="16_0i17j"]
-[ext_resource type="Texture2D" uid="uid://cf7raxrhw43qk" path="res://Assets/Art/temp_stetho_hover.png" id="17_muljk"]
+[ext_resource type="Texture2D" uid="uid://b2jjkjlmnfy1f" path="res://Assets/Art/tools/raygun.png" id="14_kwusr"]
+[ext_resource type="Texture2D" uid="uid://su76fg58v362" path="res://Assets/Art/tools/raygun_hover.png" id="15_dsner"]
+[ext_resource type="Texture2D" uid="uid://bpf6kflroewk7" path="res://Assets/Art/tools/stethescope.png" id="16_kupbj"]
+[ext_resource type="Texture2D" uid="uid://dhbyetb8n17wm" path="res://Assets/Art/tools/stethescope_hover.png" id="17_1hk8p"]
 [ext_resource type="Script" uid="uid://bejkjenm5m2f3" path="res://Assets/Scripts/sound.gd" id="18_4kbup"]
 [ext_resource type="Texture2D" uid="uid://hjm3tkiqw2do" path="res://Assets/Art/tools/LIPS CLOSED.png" id="18_80ed3"]
 [ext_resource type="AudioStream" uid="uid://u1nf00r0kpv0" path="res://Assets/Audio/cat_deposit_1.ogg" id="18_fq3cg"]
 [ext_resource type="Texture2D" uid="uid://bu4wbdw1gxnox" path="res://Assets/Art/tools/knife.png" id="18_fqjcf"]
+[ext_resource type="Texture2D" uid="uid://by1d07rc4vmu4" path="res://Assets/Art/tools/tuna.png" id="18_pt21i"]
 [ext_resource type="Texture2D" uid="uid://ba1763ai48hex" path="res://Assets/Art/tools/knife_hover.png" id="19_3pnir"]
+[ext_resource type="Texture2D" uid="uid://cbl2lu0qhehwh" path="res://Assets/Art/tools/tuna_hover.png" id="19_05dm0"]
 [ext_resource type="Texture2D" uid="uid://bd23bmvs3qrv3" path="res://Assets/Art/tools/TEETH LIPS.png" id="19_iimxx"]
 [ext_resource type="AudioStream" uid="uid://rfk57enjocmu" path="res://Assets/Audio/conveyor_loop.ogg" id="19_mhdow"]
 [ext_resource type="AudioStream" uid="uid://77asqfpd3ibd" path="res://Assets/Audio/cat_deposit_2.ogg" id="19_qxp8c"]
@@ -82,7 +84,7 @@ shader = ExtResource("8_obb38")
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_c0ktc"]
 frames = 2
 frame_0/texture = ExtResource("19_iimxx")
-frame_0/duration = 0.08
+frame_0/duration = 0.1
 frame_1/texture = ExtResource("18_80ed3")
 frame_1/duration = 0.2
 
@@ -106,7 +108,7 @@ stream_5/stream = ExtResource("30_iimxx")
 script = ExtResource("1_gjahs")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1306327301]
-texture = ExtResource("1_2qpql")
+texture = ExtResource("2_kwusr")
 centered = false
 
 [node name="Table" type="Sprite2D" parent="BG" unique_id=636654093]
@@ -164,28 +166,36 @@ offset_top = 411.0
 offset_right = 331.0
 offset_bottom = 505.0
 toggle_mode = true
-texture_normal = ExtResource("6_8bicx")
-texture_pressed = ExtResource("7_fxu2d")
+texture_normal = ExtResource("14_kwusr")
+texture_pressed = ExtResource("15_dsner")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Stethoscope" type="TextureButton" parent="UI" unique_id=175891044]
 z_index = 1
 layout_mode = 0
-offset_left = 8.0
-offset_top = 393.0
-offset_right = 166.0
-offset_bottom = 483.0
+offset_left = 23.0
+offset_top = 383.0
+offset_right = 139.0
+offset_bottom = 541.0
 toggle_mode = true
-texture_normal = ExtResource("16_0i17j")
-texture_pressed = ExtResource("17_muljk")
+texture_normal = ExtResource("16_kupbj")
+texture_pressed = ExtResource("17_1hk8p")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="Tuna" type="TextureButton" parent="UI" unique_id=244241917]
+z_index = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 114.0
+offset_top = 483.0
+offset_right = 211.0
+offset_bottom = 568.0
+toggle_mode = true
+texture_normal = ExtResource("18_pt21i")
+texture_pressed = ExtResource("19_05dm0")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Pspsps" type="TextureButton" parent="UI" unique_id=1373985668]
 z_index = 1
@@ -203,10 +213,10 @@ stretch_mode = 4
 [node name="KNIFE" type="TextureButton" parent="UI" unique_id=1306488327]
 z_index = 1
 layout_mode = 0
-offset_left = 47.0
-offset_top = 507.0
-offset_right = 159.0
-offset_bottom = 553.0
+offset_left = 32.0
+offset_top = 583.0
+offset_right = 144.0
+offset_bottom = 629.0
 toggle_mode = true
 texture_normal = ExtResource("18_fqjcf")
 texture_pressed = ExtResource("19_3pnir")
@@ -283,6 +293,16 @@ bus = &"SFX"
 [node name="BoxSpawn" type="Timer" parent="Timers" unique_id=1417916831]
 wait_time = 3.946
 
+[node name="BeltPause" type="Timer" parent="Timers" unique_id=874102116]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2012062722]
+
 [connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]
+[connection signal="toggled" from="UI/Stethoscope" to="." method="_on_stethoscope_toggled"]
+[connection signal="toggled" from="UI/Tuna" to="." method="_on_tuna_toggled"]
+[connection signal="pressed" from="UI/Pspsps" to="." method="_on_pspsps_pressed"]
+[connection signal="toggled" from="UI/KNIFE" to="." method="_on_knife_toggled"]
 [connection signal="finished" from="Sound/SFX_ConveyorStart" to="Sound" method="_on_sfx_conveyor_start_finished"]
 [connection signal="timeout" from="Timers/BoxSpawn" to="." method="_on_box_spawn_timeout"]
+[connection signal="timeout" from="Timers/BeltPause" to="." method="_on_belt_pause_timeout"]
