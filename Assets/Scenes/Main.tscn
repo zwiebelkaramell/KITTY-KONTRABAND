@@ -18,7 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://do2f01s2xblgo" path="res://Assets/Art/temp_stetho.png" id="16_0i17j"]
 [ext_resource type="Texture2D" uid="uid://cf7raxrhw43qk" path="res://Assets/Art/temp_stetho_hover.png" id="17_muljk"]
 [ext_resource type="Script" uid="uid://bejkjenm5m2f3" path="res://Assets/Scripts/sound.gd" id="18_4kbup"]
+[ext_resource type="Texture2D" uid="uid://hjm3tkiqw2do" path="res://Assets/Art/tools/LIPS CLOSED.png" id="18_80ed3"]
 [ext_resource type="AudioStream" uid="uid://u1nf00r0kpv0" path="res://Assets/Audio/cat_deposit_1.ogg" id="18_fq3cg"]
+[ext_resource type="Texture2D" uid="uid://bu4wbdw1gxnox" path="res://Assets/Art/tools/knife.png" id="18_fqjcf"]
+[ext_resource type="Texture2D" uid="uid://ba1763ai48hex" path="res://Assets/Art/tools/knife_hover.png" id="19_3pnir"]
+[ext_resource type="Texture2D" uid="uid://bd23bmvs3qrv3" path="res://Assets/Art/tools/TEETH LIPS.png" id="19_iimxx"]
 [ext_resource type="AudioStream" uid="uid://rfk57enjocmu" path="res://Assets/Audio/conveyor_loop.ogg" id="19_mhdow"]
 [ext_resource type="AudioStream" uid="uid://77asqfpd3ibd" path="res://Assets/Audio/cat_deposit_2.ogg" id="19_qxp8c"]
 [ext_resource type="AudioStream" uid="uid://jfqqyf12mohp" path="res://Assets/Audio/cat_deposit_3.ogg" id="20_h5qsp"]
@@ -74,6 +78,13 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6u0qf"]
 shader = ExtResource("8_obb38")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_c0ktc"]
+frames = 2
+frame_0/texture = ExtResource("19_iimxx")
+frame_0/duration = 0.08
+frame_1/texture = ExtResource("18_80ed3")
+frame_1/duration = 0.2
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_muljk"]
 streams_count = 4
@@ -142,24 +153,65 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="X-Ray" type="TextureButton" parent="UI" unique_id=1942287973]
+z_index = 1
 layout_mode = 0
-offset_left = 917.0
-offset_top = 486.0
-offset_right = 1151.0
-offset_bottom = 647.0
+offset_left = 194.0
+offset_top = 411.0
+offset_right = 331.0
+offset_bottom = 505.0
 toggle_mode = true
 texture_normal = ExtResource("6_8bicx")
 texture_pressed = ExtResource("7_fxu2d")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="TextureButton" type="TextureButton" parent="UI" unique_id=175891044]
+[node name="Stethoscope" type="TextureButton" parent="UI" unique_id=175891044]
+z_index = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 393.0
+offset_right = 166.0
+offset_bottom = 483.0
 toggle_mode = true
 texture_normal = ExtResource("16_0i17j")
 texture_pressed = ExtResource("17_muljk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Tuna" type="TextureButton" parent="UI" unique_id=244241917]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pspsps" type="TextureButton" parent="UI" unique_id=1373985668]
+z_index = 1
+layout_mode = 0
+offset_left = 184.0
+offset_top = 541.0
+offset_right = 314.0
+offset_bottom = 625.0
+toggle_mode = true
+texture_normal = ExtResource("18_80ed3")
+texture_pressed = SubResource("AnimatedTexture_c0ktc")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="KNIFE" type="TextureButton" parent="UI" unique_id=1306488327]
+z_index = 1
+layout_mode = 0
+offset_left = 47.0
+offset_top = 507.0
+offset_right = 159.0
+offset_bottom = 553.0
+toggle_mode = true
+texture_normal = ExtResource("18_fqjcf")
+texture_pressed = ExtResource("19_3pnir")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
 script = ExtResource("18_4kbup")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qbeldv5aacfh" path="res://Assets/Art/boxes/disgustung box inside.png" id="1_8bpiw"]
 [ext_resource type="Script" uid="uid://bjctwub7km45v" path="res://Assets/Scripts/xray.gd" id="2_dvl6v"]
-[ext_resource type="Shader" uid="uid://bwlus5j4oirnk" path="res://Assets/shaders/Xray.gdshader" id="3_8bpiw"]
+[ext_resource type="Shader" uid="uid://bwlus5j4oirnk" path="res://Assets/Shaders/Xray.gdshader" id="3_8bpiw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f5dhn"]
 shader = ExtResource("3_8bpiw")

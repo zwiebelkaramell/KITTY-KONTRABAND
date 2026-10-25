@@ -13,7 +13,15 @@ func _process(delta: float) -> void:
 	for n in $Boxes/BackBufferCopy.get_child_count():
 		if $Boxes/BackBufferCopy.get_child(n).global_position.x > 1500:
 			$Boxes/BackBufferCopy.get_child(n).queue_free()
+			if $Boxes/BackBufferCopy.get_child(n).cont_obj.is_cat:
+				G.ResFails += 1
+			else:
+				G.Quota -= 1
 			print("See ya, bozo!")
+	if G.ResFails >= G.fail_num:
+		get_tree().change_scene_to_file("res://Assets/Scenes/Fail.tscn")
+	elif G.Quota >= 0:
+		get_tree().change_scene_to_file("res://Assets/Scenes/Inbetween.tscn")
 	
 	pass
 

@@ -16,3 +16,6 @@ var IsXray = false
 var VolMaster = 0.5
 var VolSFX = 1
 var VolMusic = 1
+
+# using this to pass values between scenes cause doing it in the transition is a pain in the ass
+var ResFails = 0

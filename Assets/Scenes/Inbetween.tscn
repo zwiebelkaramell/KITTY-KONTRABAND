@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d0qxw3tlern46"]
+
+[ext_resource type="Script" uid="uid://csmpyw6lgjyo0" path="res://Assets/Scripts/inbetween.gd" id="1_rkjao"]
+[ext_resource type="Texture2D" uid="uid://cm3iuqftocnqu" path="res://Assets/Art/temp_interstitial_bg.png" id="1_vdmdy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkjao"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Inbetween" type="Node2D" unique_id=91278426]
+script = ExtResource("1_rkjao")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=2023343229]
+texture = ExtResource("1_vdmdy")
+centered = false
+
+[node name="UI" type="Control" parent="." unique_id=79720023]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="VBoxContainer" parent="UI" unique_id=736850772]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 176.0
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Container" unique_id=970874228]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_rkjao")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=42997842]
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 672.0
+offset_bottom = 368.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "CONTINUE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
