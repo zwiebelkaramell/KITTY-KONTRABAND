@@ -27,3 +27,4 @@ volume_db = 10.692
 autoplay = true
 max_distance = 96.0
 bus = &"SFX"
+playback_type = 1

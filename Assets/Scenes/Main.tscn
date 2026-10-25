@@ -292,87 +292,106 @@ script = ExtResource("18_4kbup")
 [node name="BGS_60hzHumLoop" type="AudioStreamPlayer" parent="Sound" unique_id=219500075]
 stream = ExtResource("23_ddmr4")
 bus = &"BGS"
+playback_type = 1
 parameters/looping = true
 
 [node name="BGS_ConveyorLoop" type="AudioStreamPlayer" parent="Sound" unique_id=617418656]
 stream = ExtResource("19_mhdow")
 bus = &"BGS"
+playback_type = 1
 parameters/looping = true
 
 [node name="SFX_CatDepositRandom" type="AudioStreamPlayer" parent="Sound" unique_id=1802270947]
 stream = SubResource("AudioStreamRandomizer_muljk")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_CatDepositTubeSuction" type="AudioStreamPlayer" parent="Sound" unique_id=1183986397]
 stream = ExtResource("22_iaf12")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_CatMeowRandom" type="AudioStreamPlayer" parent="Sound" unique_id=24805908]
 stream = SubResource("AudioStreamRandomizer_yxtrc")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_CatPurr1Loop" type="AudioStreamPlayer" parent="Sound" unique_id=1634276771]
 stream = ExtResource("31_kwusr")
 bus = &"SFX"
+playback_type = 1
 parameters/looping = true
 
 [node name="SFX_CatPurr1MuffledLoop" type="AudioStreamPlayer" parent="Sound" unique_id=145349178]
 stream = ExtResource("32_dsner")
 bus = &"SFX"
+playback_type = 1
 parameters/looping = true
 
 [node name="SFX_CatPurr2Loop" type="AudioStreamPlayer" parent="Sound" unique_id=1729880797]
 stream = ExtResource("33_kupbj")
 bus = &"SFX"
+playback_type = 1
 parameters/looping = true
 
 [node name="SFX_CatPurr2MuffledLoop" type="AudioStreamPlayer" parent="Sound" unique_id=529678943]
 stream = ExtResource("34_1hk8p")
 bus = &"SFX"
+playback_type = 1
 parameters/looping = true
 
 [node name="SFX_ConveyorStart" type="AudioStreamPlayer" parent="Sound" unique_id=269110474]
 stream = ExtResource("35_pt21i")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_ShiftStartWhistle" type="AudioStreamPlayer" parent="Sound" unique_id=1819735620]
 stream = ExtResource("36_05dm0")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_ItemSelectStethoscope" type="AudioStreamPlayer" parent="Sound" unique_id=998267730]
 stream = ExtResource("37_2v6g5")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_ItemSelectTuna" type="AudioStreamPlayer" parent="Sound" unique_id=1667154024]
 stream = ExtResource("38_cnwco")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_ItemSelectXRay" type="AudioStreamPlayer" parent="Sound" unique_id=1695173975]
 stream = ExtResource("39_fkcst")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_ItemSelectBoxCutter" type="AudioStreamPlayer" parent="Sound" unique_id=625513663]
 stream = ExtResource("47_e7y0p")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_BoxOpen" type="AudioStreamPlayer" parent="Sound" unique_id=1936810857]
 stream = ExtResource("48_sbipf")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_CatBoxShakeRandom" type="AudioStreamPlayer" parent="Sound" unique_id=239113394]
 stream = SubResource("AudioStreamRandomizer_os3rn")
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_IntercomVoiceRandom" type="AudioStreamPlayer" parent="Sound" unique_id=1484428313]
 stream = SubResource("AudioStreamRandomizer_7neu8")
 volume_db = 6.0
 max_polyphony = 3
 bus = &"SFX"
+playback_type = 1
 
 [node name="SFX_PsPsRandom" type="AudioStreamPlayer" parent="Sound" unique_id=60776870]
 stream = SubResource("AudioStreamRandomizer_uymjn")
 volume_db = 6.0
 bus = &"SFX"
+playback_type = 1
 
 [node name="Timers" type="Node" parent="." unique_id=1476119544]
 

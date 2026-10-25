@@ -19,4 +19,13 @@ offset_bottom = 381.0
 theme_override_font_sizes/font_size = 86
 text = "STRAT"
 
+[node name="settings" type="Button" parent="." unique_id=1117421875]
+offset_left = 473.0
+offset_top = 451.0
+offset_right = 674.0
+offset_bottom = 523.0
+text = "SETTING
+(it's just the one)"
+
 [connection signal="pressed" from="STRAT" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

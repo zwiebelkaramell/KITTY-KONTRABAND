@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dqtnldg21nl5t"]
+
+[ext_resource type="Script" uid="uid://o1hqrnmai4cc" path="res://Assets/Scripts/settings.gd" id="1_8aywk"]
+[ext_resource type="Texture2D" uid="uid://cm3iuqftocnqu" path="res://Assets/Art/temp_interstitial_bg.png" id="2_ul88g"]
+[ext_resource type="AudioStream" uid="uid://o1wcwdpedc2h" path="res://Assets/Audio/cat_meow_1.ogg" id="3_xdifv"]
+[ext_resource type="AudioStream" uid="uid://bo1s1ml1lhr5" path="res://Assets/Audio/cat_meow_2.ogg" id="4_87wbn"]
+[ext_resource type="AudioStream" uid="uid://ltyt6chmncos" path="res://Assets/Audio/cat_meow_3.ogg" id="5_gnoh3"]
+[ext_resource type="AudioStream" uid="uid://dxsb4nml2epio" path="res://Assets/Audio/cat_meow_4.ogg" id="6_hops8"]
+[ext_resource type="AudioStream" uid="uid://ctgfxdd5jlcv7" path="res://Assets/Audio/cat_meow_5.ogg" id="7_gfg6u"]
+[ext_resource type="AudioStream" uid="uid://dfwlitvimlhhu" path="res://Assets/Audio/cat_meow_6.ogg" id="8_rfao2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c0ktc"]
+streams_count = 6
+stream_0/stream = ExtResource("3_xdifv")
+stream_1/stream = ExtResource("4_87wbn")
+stream_2/stream = ExtResource("5_gnoh3")
+stream_3/stream = ExtResource("6_hops8")
+stream_4/stream = ExtResource("7_gfg6u")
+stream_5/stream = ExtResource("8_rfao2")
+
+[node name="Settings" type="Node2D" unique_id=1863193015]
+script = ExtResource("1_8aywk")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=854899355]
+texture = ExtResource("2_ul88g")
+centered = false
+
+[node name="title" type="Label" parent="." unique_id=829874551]
+offset_left = 488.0
+offset_top = 64.0
+offset_right = 658.0
+offset_bottom = 122.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "SETTING"
+
+[node name="Label" type="Label" parent="title" unique_id=1224314323]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 144.0
+offset_right = 20.0
+offset_bottom = 167.0
+text = "THIS ONE ->"
+
+[node name="Number" type="Label" parent="title" unique_id=905289293]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 144.0
+offset_right = 296.0
+offset_bottom = 167.0
+text = "110%"
+
+[node name="Volume" type="HSlider" parent="." unique_id=940079761]
+offset_left = 544.0
+offset_top = 208.0
+offset_right = 733.0
+offset_bottom = 236.0
+max_value = 2.0
+step = 0.01
+value = 1.1
+tick_count = 100
+
+[node name="GoBack" type="Button" parent="." unique_id=1208021830]
+offset_left = 432.0
+offset_top = 328.0
+offset_right = 654.0
+offset_bottom = 376.0
+theme_override_font_sizes/font_size = 24
+text = "No, Wait; Go Back"
+
+[node name="Example" type="AudioStreamPlayer" parent="." unique_id=119805402]
+stream = SubResource("AudioStreamRandomizer_c0ktc")
+playback_type = 1
+
+[connection signal="drag_ended" from="Volume" to="." method="_on_volume_drag_ended"]
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
