@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hu0m0ncbkoam"]
 
 [ext_resource type="Texture2D" uid="uid://cm3iuqftocnqu" path="res://Assets/Art/temp_interstitial_bg.png" id="1_lhn03"]
+[ext_resource type="Script" uid="uid://ce3qab6pjcfgs" path="res://Assets/Scenes/win.gd" id="1_xj2gl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c0ktc"]
 font_size = 32
@@ -8,6 +9,7 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Win" type="Node2D" unique_id=944332667]
+script = ExtResource("1_xj2gl")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=419037566]
 texture = ExtResource("1_lhn03")
@@ -35,3 +37,5 @@ offset_bottom = 384.0
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 32
 text = "FUG"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
