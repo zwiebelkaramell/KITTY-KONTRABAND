@@ -46,6 +46,21 @@
 [ext_resource type="AudioStream" uid="uid://bkvg8uqaf60ab" path="res://Assets/Audio/Stethoscope_Select.ogg" id="37_2v6g5"]
 [ext_resource type="AudioStream" uid="uid://duwvge4hpmjw0" path="res://Assets/Audio/Tuna_Select.ogg" id="38_cnwco"]
 [ext_resource type="AudioStream" uid="uid://bei1bp2j45qrk" path="res://Assets/Audio/X-Ray_Select.ogg" id="39_fkcst"]
+[ext_resource type="AudioStream" uid="uid://b8leus3ie3yen" path="res://Assets/Audio/BoxCutterOpen.ogg" id="47_e7y0p"]
+[ext_resource type="AudioStream" uid="uid://bdvpnkye40qsb" path="res://Assets/Audio/BoxOpen.ogg" id="48_sbipf"]
+[ext_resource type="AudioStream" uid="uid://cff852r2jxqrg" path="res://Assets/Audio/CatBoxTunaShake1.ogg" id="49_ti8a1"]
+[ext_resource type="AudioStream" uid="uid://bg30vwur8nc03" path="res://Assets/Audio/CatBoxTunaShake2.ogg" id="50_nxbax"]
+[ext_resource type="AudioStream" uid="uid://bh0laamjcshil" path="res://Assets/Audio/CatBoxTunaShake3.ogg" id="51_hshu0"]
+[ext_resource type="AudioStream" uid="uid://b1ooeu0t6rwvm" path="res://Assets/Audio/IntercomVoiceRah1.ogg" id="52_41ttk"]
+[ext_resource type="AudioStream" uid="uid://bm4u1vfycle4i" path="res://Assets/Audio/IntercomVoiceRah2.ogg" id="53_tycb5"]
+[ext_resource type="AudioStream" uid="uid://br6j4o8d87qx" path="res://Assets/Audio/IntercomVoiceRah3.ogg" id="54_h0r12"]
+[ext_resource type="AudioStream" uid="uid://bn1uyk15b0wfd" path="res://Assets/Audio/IntercomVoiceRah4.ogg" id="55_o80x3"]
+[ext_resource type="AudioStream" uid="uid://dowtq5omgeeoo" path="res://Assets/Audio/IntercomVoiceRah5.ogg" id="56_pi2uw"]
+[ext_resource type="AudioStream" uid="uid://dd80spai254ln" path="res://Assets/Audio/IntercomVoiceRah6.ogg" id="57_y15f1"]
+[ext_resource type="AudioStream" uid="uid://8cjq41uplon0" path="res://Assets/Audio/IntercomVoiceRah7.ogg" id="58_rxld0"]
+[ext_resource type="AudioStream" uid="uid://bpgvt4ebf42mb" path="res://Assets/Audio/PsPs1.ogg" id="59_quav6"]
+[ext_resource type="AudioStream" uid="uid://cdrehins0nlxv" path="res://Assets/Audio/PsPs2.ogg" id="60_c4sbi"]
+[ext_resource type="AudioStream" uid="uid://cuge6jafo46q2" path="res://Assets/Audio/PsPs3.ogg" id="61_jnaod"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0ktc"]
 animations = [{
@@ -103,6 +118,28 @@ stream_2/stream = ExtResource("27_fqjcf")
 stream_3/stream = ExtResource("28_3pnir")
 stream_4/stream = ExtResource("29_80ed3")
 stream_5/stream = ExtResource("30_iimxx")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_os3rn"]
+streams_count = 3
+stream_0/stream = ExtResource("49_ti8a1")
+stream_1/stream = ExtResource("50_nxbax")
+stream_2/stream = ExtResource("51_hshu0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7neu8"]
+streams_count = 7
+stream_0/stream = ExtResource("52_41ttk")
+stream_1/stream = ExtResource("53_tycb5")
+stream_2/stream = ExtResource("54_h0r12")
+stream_3/stream = ExtResource("55_o80x3")
+stream_4/stream = ExtResource("56_pi2uw")
+stream_5/stream = ExtResource("57_y15f1")
+stream_6/stream = ExtResource("58_rxld0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uymjn"]
+streams_count = 3
+stream_0/stream = ExtResource("59_quav6")
+stream_1/stream = ExtResource("60_c4sbi")
+stream_2/stream = ExtResource("61_jnaod")
 
 [node name="Main" type="Node2D" unique_id=2090636902]
 script = ExtResource("1_gjahs")
@@ -293,6 +330,28 @@ bus = &"SFX"
 [node name="SFX_ItemSelectXRay" type="AudioStreamPlayer" parent="Sound" unique_id=1695173975]
 stream = ExtResource("39_fkcst")
 bus = &"SFX"
+
+[node name="SFX_ItemSelectBoxCutter" type="AudioStreamPlayer" parent="Sound" unique_id=625513663]
+stream = ExtResource("47_e7y0p")
+bus = &"SFX"
+
+[node name="SFX_BoxOpen" type="AudioStreamPlayer" parent="Sound" unique_id=1936810857]
+stream = ExtResource("48_sbipf")
+bus = &"SFX"
+
+[node name="SFX_CatBoxShakeRandom" type="AudioStreamPlayer" parent="Sound" unique_id=239113394]
+stream = SubResource("AudioStreamRandomizer_os3rn")
+bus = &"SFX"
+
+[node name="SFX_IntercomVoiceRandom" type="AudioStreamPlayer" parent="Sound" unique_id=1484428313]
+stream = SubResource("AudioStreamRandomizer_7neu8")
+volume_db = 6.0
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="SFX_PsPsRandom" type="AudioStreamPlayer" parent="Sound" unique_id=60776870]
+stream = SubResource("AudioStreamRandomizer_uymjn")
+volume_db = 6.0
 
 [node name="Timers" type="Node" parent="." unique_id=1476119544]
 
