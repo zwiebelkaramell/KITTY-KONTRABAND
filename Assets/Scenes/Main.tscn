@@ -352,6 +352,7 @@ bus = &"SFX"
 [node name="SFX_PsPsRandom" type="AudioStreamPlayer" parent="Sound" unique_id=60776870]
 stream = SubResource("AudioStreamRandomizer_uymjn")
 volume_db = 6.0
+bus = &"SFX"
 
 [node name="Timers" type="Node" parent="." unique_id=1476119544]
 
