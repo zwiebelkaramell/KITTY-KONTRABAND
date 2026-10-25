@@ -1,31 +1,63 @@
 [gd_scene format=3 uid="uid://mbp7muhay6n"]
 
 [ext_resource type="Script" uid="uid://c8vwtcu0pnm26" path="res://Assets/Scripts/menu.gd" id="1_8t58v"]
-[ext_resource type="Texture2D" uid="uid://d2f6ajoyamc74" path="res://Assets/Art/temp_menu_bg.png" id="2_bo43k"]
+[ext_resource type="Texture2D" uid="uid://bw11jsic5kb6i" path="res://Assets/Art/boxes and menus/MENU BUTTON DEFAULT - UNPRESSED.png" id="3_5c00w"]
+[ext_resource type="Texture2D" uid="uid://cwrg5r2vf82o3" path="res://Assets/Art/boxes and menus/MAIN MENUE BG, BUTTONS AND WORDS SEPERATE.png" id="3_bo43k"]
+[ext_resource type="Texture2D" uid="uid://bc2bvan4b16fp" path="res://Assets/Art/boxes and menus/START TEXT.png" id="4_ykrdu"]
+[ext_resource type="Texture2D" uid="uid://c2hjjgu6rgpsu" path="res://Assets/Art/boxes and menus/SETTINGS TEXT.png" id="5_3xrxe"]
 
 [node name="Menu" type="Node2D" unique_id=1209589811]
 script = ExtResource("1_8t58v")
 
-[node name="BG" type="TextureRect" parent="." unique_id=2142021771]
+[node name="BG2" type="TextureRect" parent="." unique_id=1685643074]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_bo43k")
+texture = ExtResource("3_bo43k")
+
+[node name="BG4" type="TextureRect" parent="." unique_id=676802575]
+offset_left = 3.0
+offset_top = 163.0
+offset_right = 1155.0
+offset_bottom = 811.0
+texture = ExtResource("3_5c00w")
+
+[node name="BG3" type="TextureRect" parent="." unique_id=426445342]
+offset_right = 1152.0
+offset_bottom = 648.0
+pivot_offset = Vector2(1269, 47)
+texture = ExtResource("3_5c00w")
+
+[node name="BG" type="TextureRect" parent="." unique_id=2142021771]
+offset_left = 1.0
+offset_top = 0.535
+offset_right = 1153.0
+offset_bottom = 648.535
+texture = ExtResource("4_ykrdu")
+
+[node name="BG5" type="TextureRect" parent="." unique_id=470446093]
+offset_left = 1.0
+offset_top = 0.535
+offset_right = 1153.0
+offset_bottom = 648.535
+texture = ExtResource("5_3xrxe")
 
 [node name="STRAT" type="Button" parent="." unique_id=2061343011]
-offset_left = 394.0
-offset_top = 255.0
-offset_right = 756.0
-offset_bottom = 381.0
+offset_left = 396.0
+offset_top = 249.99998
+offset_right = 1074.899
+offset_bottom = 381.50458
+scale = Vector2(0.545, 0.545)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(0.33260515, 0.33260515, 0.33260515, 1)
 theme_override_font_sizes/font_size = 86
-text = "STRAT"
+text = "
+"
 
 [node name="settings" type="Button" parent="." unique_id=1117421875]
-offset_left = 473.0
-offset_top = 451.0
-offset_right = 674.0
-offset_bottom = 523.0
-text = "SETTING
-(it's just the one)"
+offset_left = 398.0
+offset_top = 414.0
+offset_right = 770.0
+offset_bottom = 486.0
 
 [connection signal="pressed" from="STRAT" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
