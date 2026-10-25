@@ -148,3 +148,8 @@ func _on_knife_toggled(toggled_on: bool) -> void:
 
 func _on_pspsps_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_blink_timer_timeout() -> void:
+	$BG.play()
+	$Timers/BlinkTimer.start(randf_range(5.0,10.0))
