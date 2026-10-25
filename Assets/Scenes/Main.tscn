@@ -107,6 +107,10 @@ stream_5/stream = ExtResource("30_iimxx")
 [node name="Main" type="Node2D" unique_id=2090636902]
 script = ExtResource("1_gjahs")
 
+[node name="Default Listener" type="AudioListener2D" parent="." unique_id=833226293]
+position = Vector2(576, 7)
+current = true
+
 [node name="BG" type="Sprite2D" parent="." unique_id=1306327301]
 texture = ExtResource("2_kwusr")
 centered = false
@@ -146,6 +150,8 @@ visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_6u0qf")
 texture = ExtResource("9_6pypa")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Boxes/BackBufferCopy/Mask" unique_id=160767025]
 
 [node name="Marker_Spawn" type="Marker2D" parent="." unique_id=223404620]
 position = Vector2(-268, 156)
@@ -295,8 +301,6 @@ wait_time = 3.946
 
 [node name="BeltPause" type="Timer" parent="Timers" unique_id=874102116]
 one_shot = true
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2012062722]
 
 [connection signal="toggled" from="UI/X-Ray" to="." method="_on_x_ray_toggled"]
 [connection signal="toggled" from="UI/Stethoscope" to="." method="_on_stethoscope_toggled"]

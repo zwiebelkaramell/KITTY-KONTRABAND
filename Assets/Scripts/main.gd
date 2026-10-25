@@ -125,11 +125,13 @@ func _on_x_ray_toggled(toggled_on: bool) -> void:
 
 func _on_stethoscope_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		G.IsStetho = true
 		exclusive_toggle($UI/Stethoscope.name)
 		$Sound/SFX_ItemSelectStethoscope.play()
 	else:
-		pass
-		
+		G.IsStetho = false
+		$"Default Listener".make_current()
+	$Boxes.toggle_stetho()
 func _on_tuna_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		exclusive_toggle($UI/Tuna.name)

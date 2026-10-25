@@ -8,3 +8,9 @@ func toggle_xray():
 		$BackBufferCopy/Mask.visible = false
 	else:
 		$BackBufferCopy/Mask.visible = true
+
+func toggle_stetho():
+	if G.IsStetho:
+		$BackBufferCopy/Mask/AudioListener2D.make_current()
+	else:
+		$BackBufferCopy/Mask/AudioListener2D.clear_current()
