@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hu0m0ncbkoam"]
 
 [ext_resource type="Script" uid="uid://ce3qab6pjcfgs" path="res://Assets/Scenes/win.gd" id="1_xj2gl"]
-[ext_resource type="Texture2D" uid="uid://178fkdgcxjwy" path="res://Assets/Art/boxes and menus/WIN SCREEN.png" id="2_1emqh"]
+[ext_resource type="Texture2D" uid="uid://dudpupys8mjxp" path="res://Assets/Art/boxes and menus/ROBOT NO LONGER NEEDED.png" id="2_1emqh"]
 [ext_resource type="Texture2D" uid="uid://c6npgx03r54ab" path="res://Assets/Art/boxes and menus/FUG.png" id="3_mnqrj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c0ktc"]
