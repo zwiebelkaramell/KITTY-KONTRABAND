@@ -25,7 +25,7 @@ var VolSFX = 1
 var VolMusic = 1
 
 var Level = 0
-
+var Tutorial = true
 # using this to pass values between scenes cause doing it in the transition is a pain in the ass
 var ResFails = 0
 var ResFailNonCat = false

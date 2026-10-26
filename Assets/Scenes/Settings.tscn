@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dxsb4nml2epio" path="res://Assets/Audio/cat_meow_4.ogg" id="6_hops8"]
 [ext_resource type="AudioStream" uid="uid://ctgfxdd5jlcv7" path="res://Assets/Audio/cat_meow_5.ogg" id="7_gfg6u"]
 [ext_resource type="AudioStream" uid="uid://dfwlitvimlhhu" path="res://Assets/Audio/cat_meow_6.ogg" id="8_rfao2"]
+[ext_resource type="Texture2D" uid="uid://2gn54p6bnymg" path="res://Assets/Art/objects n cats/tutorial.png" id="11_hops8"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c0ktc"]
 streams_count = 6
@@ -53,8 +54,9 @@ offset_bottom = 168.0
 text = "110%"
 
 [node name="BG2" type="TextureRect" parent="." unique_id=1123171729]
+offset_left = 8.0
 offset_top = 64.0
-offset_right = 1152.0
+offset_right = 1160.0
 offset_bottom = 712.0
 texture = ExtResource("3_hops8")
 
@@ -95,5 +97,16 @@ theme_override_font_sizes/font_size = 24
 stream = SubResource("AudioStreamRandomizer_c0ktc")
 playback_type = 1
 
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1252156507]
+offset_left = 352.0
+offset_top = 464.0
+offset_right = 792.0
+offset_bottom = 656.0
+toggle_mode = true
+texture_pressed = ExtResource("11_hops8")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="drag_ended" from="Volume" to="." method="_on_volume_drag_ended"]
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]

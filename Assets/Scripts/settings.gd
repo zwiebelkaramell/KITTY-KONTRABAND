@@ -13,3 +13,11 @@ func _on_volume_drag_ended(value_changed: bool) -> void:
 func _on_go_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Assets/Scenes/Main.tscn")
 	pass # Replace with function body.
+
+
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	if G.Tutorial == true:
+		G.Tutorial = false
+	else:
+		G.Tutorial = true
+	pass # Replace with function body.

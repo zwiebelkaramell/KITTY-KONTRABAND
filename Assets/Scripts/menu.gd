@@ -3,7 +3,10 @@ extends Node2D
 
 func _on_button_pressed() -> void:
 	G.reset()
-	get_tree().change_scene_to_file("res://Assets/Scenes/Main.tscn")
+	if G.Tutorial:
+		get_tree().change_scene_to_file("res://Assets/Scenes/Tutorial.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Assets/Scenes/Main.tscn")
 	pass
 
 
