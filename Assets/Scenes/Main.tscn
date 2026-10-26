@@ -328,6 +328,23 @@ texture_pressed = ExtResource("19_3pnir")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="Quota" type="Label" parent="UI" unique_id=1931470317]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "BOXES MAILED:"
+
+[node name="Fails" type="Label" parent="UI" unique_id=1223599554]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 341.0
+offset_bottom = 63.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "FAILURES:"
+
 [node name="Sound" type="Node" parent="." unique_id=1876084052]
 script = ExtResource("18_4kbup")
 

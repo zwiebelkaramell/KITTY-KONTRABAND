@@ -7,6 +7,9 @@ var obj_list = load("res://Assets/Scripts/Object scripts/ObjectList.gd").new()
 var clicked_boxes = []
 var tuna_bool = false
 
+var mailed = 0
+var quota = 0
+
 func _process(delta: float) -> void:
 	$Boxes.position.x += (G.Speed*delta)
 	
@@ -16,10 +19,12 @@ func _process(delta: float) -> void:
 		if $Boxes.get_child(n).global_position.x > 1500 && $Boxes.get_child(n).has_meta("Xray"): #sigh
 			if $Boxes.get_child(n).cont_obj.is_cat:
 				G.ResFails += 1
+				update_ui()
 				if G.ResFails >= G.fail_num:
 					get_tree().change_scene_to_file("res://Assets/Scenes/Fail.tscn")
 			else:
 				G.Quota -= 1
+				update_ui()
 			$Boxes.get_child(n).queue_free()
 			print("See ya, clowno!")
 	for n in $Boxes/BackBufferCopy.get_child_count():
@@ -36,8 +41,14 @@ func _ready() -> void:
 	do_box()
 	$Sound/BGS_60hzHumLoop.play()
 	$Sound/SFX_ConveyorStart.play()
-	
+	quota = G.Quota
+	update_ui()
+
 	pass
+
+func update_ui():
+	$UI/Quota.text = "BOXES MAILED: "+str(mailed)+"/"+str(quota)
+	$UI/Fails.text = "FAILURES: "+str(G.ResFails)+"/"+str(G.fail_num)
 
 func do_box():
 	var box = box_scene.instantiate()
@@ -106,6 +117,7 @@ func _on_box_clicked(xray: Node, box: Node):
 			pass
 		else:
 			G.ResFails += 1
+			update_ui()
 			if G.ResFails >= G.fail_num:
 				G.ResFailNonCat = true
 		clicked_boxes.append(xray)
