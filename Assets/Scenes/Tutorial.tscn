@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dd4prq6khu071"]
 
-[ext_resource type="Script" uid="uid://cc3sacas60c60" path="res://Assets/Scripts/tutorial.gd" id="1_hy0f4"]
+[ext_resource type="Script" uid="uid://dulvb0mdu4vxy" path="res://Assets/Scripts/tutorial.gd" id="1_hy0f4"]
 [ext_resource type="Texture2D" uid="uid://b3box6pmtpg5r" path="res://Assets/Art/background/bg.png" id="2_sbdn2"]
 [ext_resource type="Texture2D" uid="uid://bd64wlgjc7klk" path="res://Assets/Art/background/bg_blink.png" id="3_6hmv6"]
 [ext_resource type="Texture2D" uid="uid://b730qn1ex8dkt" path="res://Assets/Art/tables/dirty ass item table.png" id="4_c0ul5"]
@@ -384,6 +384,7 @@ parameters/looping = true
 
 [node name="SFX_CatDepositRandom" type="AudioStreamPlayer" parent="Sound" unique_id=1802270947]
 stream = SubResource("AudioStreamRandomizer_muljk")
+volume_db = 2.0
 bus = &"SFX"
 playback_type = 1
 
@@ -433,16 +434,19 @@ playback_type = 1
 
 [node name="SFX_ItemSelectStethoscope" type="AudioStreamPlayer" parent="Sound" unique_id=998267730]
 stream = ExtResource("48_kcgiq")
+volume_db = 2.498
 bus = &"SFX"
 playback_type = 1
 
 [node name="SFX_ItemSelectTuna" type="AudioStreamPlayer" parent="Sound" unique_id=1667154024]
 stream = ExtResource("49_f30lu")
+volume_db = 2.498
 bus = &"SFX"
 playback_type = 1
 
 [node name="SFX_ItemSelectXRay" type="AudioStreamPlayer" parent="Sound" unique_id=1695173975]
 stream = ExtResource("50_brxmh")
+volume_db = -4.372
 bus = &"SFX"
 playback_type = 1
 

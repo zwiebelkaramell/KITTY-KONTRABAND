@@ -150,6 +150,7 @@ func _on_box_clicked(xray: Node, box: Node):
 		xray.get_child(0).set_material(null)
 		if xray.cont_obj.is_cat:
 			xray.deposit = true
+			$Sound/SFX_CatDepositRandom.play()
 			pass
 		else:
 			G.ResFails += 1
@@ -215,6 +216,7 @@ func _on_knife_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		G.IsKnife = true
 		exclusive_toggle($UI/KNIFE.name)
+		$Sound/SFX_ItemSelectBoxCutter.play()
 	else:
 		G.IsKnife = false
 	$Boxes.toggle_knife()
@@ -230,6 +232,7 @@ func _on_blink_timer_timeout() -> void:
 func should_you_shake(obj: Node): # THE JANK IS REAL
 	if tuna_bool:
 		obj.shake()
+		$Sound/SFX_CatBoxShakeRandom.play()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if progress == 1:
