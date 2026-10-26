@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dd4prq6khu071"]
 
-[ext_resource type="Script" uid="uid://dulvb0mdu4vxy" path="res://Assets/Scripts/tutorial.gd" id="1_hy0f4"]
+[ext_resource type="Script" uid="uid://cc3sacas60c60" path="res://Assets/Scripts/tutorial.gd" id="1_hy0f4"]
 [ext_resource type="Texture2D" uid="uid://b3box6pmtpg5r" path="res://Assets/Art/background/bg.png" id="2_sbdn2"]
 [ext_resource type="Texture2D" uid="uid://bd64wlgjc7klk" path="res://Assets/Art/background/bg_blink.png" id="3_6hmv6"]
 [ext_resource type="Texture2D" uid="uid://b730qn1ex8dkt" path="res://Assets/Art/tables/dirty ass item table.png" id="4_c0ul5"]
 [ext_resource type="Texture2D" uid="uid://8w0bobfj3boa" path="res://Assets/Art/tools/behind of cat shoot.png" id="5_bcs35"]
 [ext_resource type="Texture2D" uid="uid://bivtd4g6oquxe" path="res://Assets/Art/tools/ cat shoot 1 file.png" id="6_ro8n4"]
+[ext_resource type="Texture2D" uid="uid://cxrlmkud455yq" path="res://Assets/Art/background/BRICKS.png" id="7_c0ul5"]
 [ext_resource type="Texture2D" uid="uid://btgxhjjrfdpek" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines1.png" id="7_rgei0"]
+[ext_resource type="Texture2D" uid="uid://bril6l1iq7yw0" path="res://Assets/Art/boxes and menus/ingame ui box ex cats 1 of 13 day 1 .png" id="8_bcs35"]
 [ext_resource type="Texture2D" uid="uid://cge5ojoltukno" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines2.png" id="8_u11la"]
 [ext_resource type="Texture2D" uid="uid://bs6d4aspypydi" path="res://Assets/Art/Conveyer/the fancier conveyer belt/conveyorlines3.png" id="9_bfucp"]
+[ext_resource type="Texture2D" uid="uid://bd77br32pkj7m" path="res://Assets/Art/tools/speakers.png" id="9_ro8n4"]
 [ext_resource type="Texture2D" uid="uid://gu4bqq465luy" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball1conveyor.png" id="10_w3bnr"]
 [ext_resource type="Texture2D" uid="uid://cqfo3h57ir44y" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball2conveyor.png" id="11_qkreq"]
 [ext_resource type="Texture2D" uid="uid://bx47rekltlkg6" path="res://Assets/Art/Conveyer/the fancier conveyer belt/outline.png" id="12_q6t4f"]
@@ -211,6 +214,18 @@ centered = false
 [node name="Front" type="Sprite2D" parent="BG/Chute" unique_id=311913558]
 texture = ExtResource("6_ro8n4")
 centered = false
+
+[node name="BRICKS" type="Sprite2D" parent="BG" unique_id=159702678]
+position = Vector2(576.54, 323.02)
+texture = ExtResource("7_c0ul5")
+
+[node name="BOX FOR MAILED AND FAILED" type="Sprite2D" parent="BG" unique_id=1432378646]
+position = Vector2(572.67, 320.695)
+texture = ExtResource("8_bcs35")
+
+[node name="RADIO" type="Sprite2D" parent="BG" unique_id=332336739]
+position = Vector2(582.895, 316.165)
+texture = ExtResource("9_ro8n4")
 
 [node name="Conveyor" type="AnimatedSprite2D" parent="." unique_id=214091721]
 sprite_frames = SubResource("SpriteFrames_c0ktc")
