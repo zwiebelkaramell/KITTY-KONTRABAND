@@ -2,10 +2,10 @@
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_j3pel"]
 resource_name = "Limiter"
-ceiling_db = -5.0
+ceiling_db = -4.0
 
 [resource]
-bus/0/volume_db = -9.209199
+bus/0/volume_db = -0.13049698
 bus/0/effect/0/effect = SubResource("AudioEffectLimiter_j3pel")
 bus/0/effect/0/enabled = true
 bus/1/name = &"SFX"
@@ -24,5 +24,5 @@ bus/3/name = &"BGS"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -3.5429828
+bus/3/volume_db = -4.9054427
 bus/3/send = &"Master"
