@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://bjctwub7km45v" path="res://Assets/Scripts/xray.gd" id="2_dvl6v"]
 [ext_resource type="Shader" uid="uid://bwlus5j4oirnk" path="res://Assets/Shaders/Xray.gdshader" id="3_8bpiw"]
 [ext_resource type="AudioStream" uid="uid://bipltgkx70j64" path="res://Assets/Audio/cat_purr_1_loop_muffled.ogg" id="4_7i46i"]
+[ext_resource type="Texture2D" uid="uid://b3h47c78g8b7t" path="res://Assets/Art/objects n cats/black cat.png" id="4_38gu8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5dhn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38gu8"]
 shader = ExtResource("3_8bpiw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0ktc"]
@@ -13,6 +14,18 @@ size = Vector2(168, 118)
 
 [sub_resource type="Animation" id="Animation_7i46i"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Contents:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, 71)]
+}
 
 [sub_resource type="Animation" id="Animation_38gu8"]
 resource_name = "shake"
@@ -23,10 +36,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0009999999, 0.06766667, 0.16766667, 0.301),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.0009999999, 0.06666667, 0.16666667, 0.3, 0.301, 0.36666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.06283185307179626, -0.10122909661567131, 0.0]
+"values": [0.0, 0.06283185307179626, -0.10122909661567132, 0.0, 0.0, -0.10122909661567132, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_xr1b0"]
@@ -41,7 +54,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.06283185307179626, -0.10122909661567131, 0.0]
+"values": [0.0, 0.06283185307179626, -0.10122909661567132, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xr1b0"]
@@ -54,14 +67,15 @@ _data = {
 [node name="Xray" type="TextureButton" unique_id=901372612]
 offset_right = 279.0
 offset_bottom = 224.0
-pivot_offset = Vector2(139, 126)
+pivot_offset = Vector2(141, 129)
 texture_normal = ExtResource("1_8bpiw")
 script = ExtResource("2_dvl6v")
 metadata/Xray = true
 
 [node name="Contents" type="Sprite2D" parent="." unique_id=69195861]
-material = SubResource("ShaderMaterial_f5dhn")
+material = SubResource("ShaderMaterial_38gu8")
 position = Vector2(22, 71)
+texture = ExtResource("4_38gu8")
 centered = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Contents" unique_id=1545092162]

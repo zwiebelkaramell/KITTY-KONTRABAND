@@ -10,7 +10,7 @@ var tuna_bool = false
 func _process(delta: float) -> void:
 	$Boxes.position.x += (G.Speed*delta)
 	
-
+	
 	
 	for n in $Boxes.get_child_count(): #sigh
 		if $Boxes.get_child(n).global_position.x > 1500 && $Boxes.get_child(n).has_meta("Xray"): #sigh
@@ -63,7 +63,7 @@ func day_start(): #pull data on magic objects, replace some with cats
 		var y = randi_range(0, (len(obj_list.cat)-1))
 		var tuna = randi_range(0, 1)
 		G.PKGList[x] = obj_list.cat[y]
-		G.PKGList[x].is_tuna = bool(x)
+		G.PKGList[x].is_tuna = bool(tuna)
 		print("CAT ACTIVATED")
 	pass
 	
@@ -102,6 +102,7 @@ func _on_box_clicked(xray: Node, box: Node):
 		box.queue_free()
 		xray.get_child(0).set_material(null)
 		if xray.cont_obj.is_cat:
+			xray.deposit = true
 			pass
 		else:
 			G.ResFails += 1
