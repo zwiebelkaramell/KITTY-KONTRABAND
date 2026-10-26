@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dqtnldg21nl5t"]
 
 [ext_resource type="Script" uid="uid://o1hqrnmai4cc" path="res://Assets/Scripts/settings.gd" id="1_8aywk"]
-[ext_resource type="Texture2D" uid="uid://cm3iuqftocnqu" path="res://Assets/Art/temp_interstitial_bg.png" id="2_ul88g"]
+[ext_resource type="Texture2D" uid="uid://dccioa7mgxawm" path="res://Assets/Art/boxes and menus/SETTINGS BG.png" id="2_gnoh3"]
+[ext_resource type="Texture2D" uid="uid://bw11jsic5kb6i" path="res://Assets/Art/boxes and menus/MENU BUTTON DEFAULT - UNPRESSED.png" id="3_hops8"]
 [ext_resource type="AudioStream" uid="uid://o1wcwdpedc2h" path="res://Assets/Audio/cat_meow_1.ogg" id="3_xdifv"]
 [ext_resource type="AudioStream" uid="uid://bo1s1ml1lhr5" path="res://Assets/Audio/cat_meow_2.ogg" id="4_87wbn"]
+[ext_resource type="Texture2D" uid="uid://cnf51fljm4rs4" path="res://Assets/Art/boxes and menus/RETURN.png" id="4_gfg6u"]
 [ext_resource type="AudioStream" uid="uid://ltyt6chmncos" path="res://Assets/Audio/cat_meow_3.ogg" id="5_gnoh3"]
 [ext_resource type="AudioStream" uid="uid://dxsb4nml2epio" path="res://Assets/Audio/cat_meow_4.ogg" id="6_hops8"]
 [ext_resource type="AudioStream" uid="uid://ctgfxdd5jlcv7" path="res://Assets/Audio/cat_meow_5.ogg" id="7_gfg6u"]
@@ -22,7 +24,8 @@ stream_5/stream = ExtResource("8_rfao2")
 script = ExtResource("1_8aywk")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=854899355]
-texture = ExtResource("2_ul88g")
+position = Vector2(1, 0)
+texture = ExtResource("2_gnoh3")
 centered = false
 
 [node name="title" type="Label" parent="." unique_id=829874551]
@@ -32,41 +35,61 @@ offset_right = 658.0
 offset_bottom = 122.0
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 42
-text = "SETTING"
 
 [node name="Label" type="Label" parent="title" unique_id=1224314323]
 layout_mode = 0
-offset_left = -72.0
-offset_top = 144.0
-offset_right = 20.0
-offset_bottom = 167.0
+offset_left = -216.0
+offset_top = 143.0
+offset_right = -124.0
+offset_bottom = 166.0
 text = "THIS ONE ->"
 
 [node name="Number" type="Label" parent="title" unique_id=905289293]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 144.0
-offset_right = 296.0
-offset_bottom = 167.0
+offset_left = 319.0
+offset_top = 145.0
+offset_right = 361.0
+offset_bottom = 168.0
 text = "110%"
 
+[node name="BG2" type="TextureRect" parent="." unique_id=1123171729]
+offset_top = 64.0
+offset_right = 1152.0
+offset_bottom = 712.0
+texture = ExtResource("3_hops8")
+
+[node name="BG" type="TextureRect" parent="BG2" unique_id=1244538922]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -536.0
+offset_top = -287.0
+offset_right = 468.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gfg6u")
+expand_mode = 1
+
 [node name="Volume" type="HSlider" parent="." unique_id=940079761]
-offset_left = 544.0
-offset_top = 208.0
-offset_right = 733.0
-offset_bottom = 236.0
+offset_left = 396.0
+offset_top = 180.0
+offset_right = 774.0
+offset_bottom = 263.0
 max_value = 2.0
 step = 0.01
 value = 0.5
 tick_count = 100
 
 [node name="GoBack" type="Button" parent="." unique_id=1208021830]
-offset_left = 432.0
-offset_top = 328.0
-offset_right = 654.0
-offset_bottom = 376.0
+offset_left = 393.0
+offset_top = 314.0
+offset_right = 767.0
+offset_bottom = 387.0
 theme_override_font_sizes/font_size = 24
-text = "No, Wait; Go Back"
 
 [node name="Example" type="AudioStreamPlayer" parent="." unique_id=119805402]
 stream = SubResource("AudioStreamRandomizer_c0ktc")
