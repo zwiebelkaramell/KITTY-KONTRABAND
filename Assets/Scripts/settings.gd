@@ -11,7 +11,7 @@ func _on_volume_drag_ended(value_changed: bool) -> void:
 
 
 func _on_go_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/Scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scenes/Menu.tscn")
 	pass # Replace with function body.
 
 
