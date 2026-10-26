@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 					get_tree().change_scene_to_file("res://Assets/Scenes/Fail.tscn")
 			else:
 				G.Quota -= 1
+				mailed += 1
 				update_ui()
 			$Boxes.get_child(n).queue_free()
 			print("See ya, clowno!")

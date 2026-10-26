@@ -5,7 +5,7 @@ extends Node
 # snake_case for constants, PascalCase for variables
 
 var fail_num = 3
-var base_speed = 100
+var base_speed = 70
 var base_catnum = 30
 var base_quota = 10
 var last_level = 3
