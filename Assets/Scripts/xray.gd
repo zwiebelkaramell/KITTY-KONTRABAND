@@ -2,13 +2,11 @@ extends TextureButton
 
 var cont_obj: Object
 var deposit = false
-var t = 0
 @onready var hitbox = $Contents/Area2D
 
 func _process(delta: float) -> void:
 	if deposit:
-		t += delta/500
-		$Contents.global_position = lerp($Contents.global_position, (Vector2(850,480)), ease(t, 0.2))
+		$Contents.global_position = lerp($Contents.global_position, (Vector2(850,480)), 0.003)
 
 func pass_obj(obj: Object):
 	cont_obj = obj
