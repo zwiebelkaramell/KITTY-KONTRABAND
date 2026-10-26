@@ -128,7 +128,7 @@ func _on_box_clicked(xray: Node, box: Node):
 	pass
 
 func _on_belt_pause_timeout() -> void:
-	G.Speed = G.base_speed
+	G.Speed = G.base_speed + ((30)*G.Level)
 	for x in range(0, len(clicked_boxes)):
 		clicked_boxes[0].queue_free()
 		clicked_boxes.pop_at(0)
