@@ -18,17 +18,19 @@
 [ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="8_obb38"]
 [ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="9_6pypa"]
 [ext_resource type="Texture2D" uid="uid://bd77br32pkj7m" path="res://Assets/Art/tools/speakers.png" id="9_pi2uw"]
-[ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="9_xxxt7"]
 [ext_resource type="Texture2D" uid="uid://b2jjkjlmnfy1f" path="res://Assets/Art/tools/raygun.png" id="14_kwusr"]
 [ext_resource type="Texture2D" uid="uid://su76fg58v362" path="res://Assets/Art/tools/raygun_hover.png" id="15_dsner"]
 [ext_resource type="Texture2D" uid="uid://c1mqly03ikbog" path="res://Assets/Art/tools/1st long stethistcope throat.png" id="15_ti8a1"]
 [ext_resource type="Texture2D" uid="uid://bpf6kflroewk7" path="res://Assets/Art/tools/stethescope.png" id="16_kupbj"]
+[ext_resource type="Texture2D" uid="uid://cfj0t2dwi86k5" path="res://Assets/Art/BOLTS/D.png" id="16_pi2uw"]
 [ext_resource type="Texture2D" uid="uid://dhbyetb8n17wm" path="res://Assets/Art/tools/stethescope_hover.png" id="17_1hk8p"]
+[ext_resource type="Texture2D" uid="uid://dyuftecvtuo4t" path="res://Assets/Art/BOLTS/F.png" id="17_y15f1"]
 [ext_resource type="Script" uid="uid://bejkjenm5m2f3" path="res://Assets/Scripts/sound.gd" id="18_4kbup"]
 [ext_resource type="Texture2D" uid="uid://hjm3tkiqw2do" path="res://Assets/Art/tools/LIPS CLOSED.png" id="18_80ed3"]
 [ext_resource type="AudioStream" uid="uid://u1nf00r0kpv0" path="res://Assets/Audio/cat_deposit_1.ogg" id="18_fq3cg"]
 [ext_resource type="Texture2D" uid="uid://bu4wbdw1gxnox" path="res://Assets/Art/tools/knife.png" id="18_fqjcf"]
 [ext_resource type="Texture2D" uid="uid://by1d07rc4vmu4" path="res://Assets/Art/tools/tuna.png" id="18_pt21i"]
+[ext_resource type="Texture2D" uid="uid://nih2w61f8d20" path="res://Assets/Art/BOLTS/XC.png" id="18_rxld0"]
 [ext_resource type="Texture2D" uid="uid://ba1763ai48hex" path="res://Assets/Art/tools/knife_hover.png" id="19_3pnir"]
 [ext_resource type="Texture2D" uid="uid://cbl2lu0qhehwh" path="res://Assets/Art/tools/tuna_hover.png" id="19_05dm0"]
 [ext_resource type="Texture2D" uid="uid://bd23bmvs3qrv3" path="res://Assets/Art/tools/TEETH LIPS.png" id="19_iimxx"]
@@ -111,6 +113,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_muljk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2du0k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_pi2uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_y15f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rxld0")
 }],
 "loop": 1,
 "name": &"default",
@@ -220,8 +239,10 @@ centered = false
 texture = ExtResource("8_22soc")
 centered = false
 
-[node name="bolts" type="Sprite2D" parent="Conveyor/rollers/linework" unique_id=1726638943]
-texture = ExtResource("9_xxxt7")
+[node name="bolts" type="AnimatedSprite2D" parent="Conveyor/rollers/linework" unique_id=323007276]
+sprite_frames = SubResource("SpriteFrames_2du0k")
+autoplay = "default"
+frame_progress = 0.5675867
 centered = false
 
 [node name="Boxes" type="Node2D" parent="." unique_id=909054982]

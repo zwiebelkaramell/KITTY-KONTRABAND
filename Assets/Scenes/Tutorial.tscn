@@ -15,12 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://gu4bqq465luy" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball1conveyor.png" id="10_w3bnr"]
 [ext_resource type="Texture2D" uid="uid://cqfo3h57ir44y" path="res://Assets/Art/Conveyer/the fancier conveyer belt/ball2conveyor.png" id="11_qkreq"]
 [ext_resource type="Texture2D" uid="uid://bx47rekltlkg6" path="res://Assets/Art/Conveyer/the fancier conveyer belt/outline.png" id="12_q6t4f"]
-[ext_resource type="Texture2D" uid="uid://prkkwduhbcww" path="res://Assets/Art/Conveyer/the fancier conveyer belt/flatheadbolts.png" id="13_v0fud"]
 [ext_resource type="Script" uid="uid://bjx0sru22ru6m" path="res://Assets/Scripts/boxes.gd" id="14_uycbg"]
 [ext_resource type="Shader" uid="uid://club3wbfcr74c" path="res://Assets/Shaders/Box.gdshader" id="15_j4rfj"]
 [ext_resource type="Texture2D" uid="uid://bn68esbtc7x3d" path="res://Assets/Art/mask.png" id="16_p8dpj"]
+[ext_resource type="Texture2D" uid="uid://cfj0t2dwi86k5" path="res://Assets/Art/BOLTS/D.png" id="16_ro8n4"]
 [ext_resource type="Texture2D" uid="uid://c1mqly03ikbog" path="res://Assets/Art/tools/1st long stethistcope throat.png" id="17_j1vpj"]
+[ext_resource type="Texture2D" uid="uid://dyuftecvtuo4t" path="res://Assets/Art/BOLTS/F.png" id="17_rgei0"]
 [ext_resource type="Texture2D" uid="uid://by1d07rc4vmu4" path="res://Assets/Art/tools/tuna.png" id="18_7d7gt"]
+[ext_resource type="Texture2D" uid="uid://nih2w61f8d20" path="res://Assets/Art/BOLTS/XC.png" id="18_u11la"]
 [ext_resource type="Texture2D" uid="uid://bu4wbdw1gxnox" path="res://Assets/Art/tools/knife.png" id="19_c3iqn"]
 [ext_resource type="Texture2D" uid="uid://b2jjkjlmnfy1f" path="res://Assets/Art/tools/raygun.png" id="20_sffgt"]
 [ext_resource type="Texture2D" uid="uid://su76fg58v362" path="res://Assets/Art/tools/raygun_hover.png" id="21_id6hg"]
@@ -111,6 +113,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_qkreq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bfucp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ro8n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rgei0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u11la")
 }],
 "loop": 1,
 "name": &"default",
@@ -241,8 +260,10 @@ centered = false
 texture = ExtResource("12_q6t4f")
 centered = false
 
-[node name="bolts" type="Sprite2D" parent="Conveyor/rollers/linework" unique_id=1726638943]
-texture = ExtResource("13_v0fud")
+[node name="bolts" type="AnimatedSprite2D" parent="Conveyor/rollers/linework" unique_id=1494755995]
+sprite_frames = SubResource("SpriteFrames_bfucp")
+autoplay = "default"
+frame_progress = 0.09702653
 centered = false
 
 [node name="Boxes" type="Node2D" parent="." unique_id=909054982]
